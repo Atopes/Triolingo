@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".MainActivity">
+<TextView
+    android:id="@+id/kola"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:text="Počet prejdených kôl: 0" />
+<FrameLayout
+    android:id="@+id/tatry"
+    android:layout_width="360dp"
+    android:layout_height="219dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/tatry">
+    <ImageView
+        android:id="@+id/auticko"
+        android:layout_width="32dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="190dp"
+        app:srcCompat="@drawable/autop"
+        tools:ignore="ContentDescription" />
+</FrameLayout>
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="horizontal"
+android:gravity="center_horizontal"
+android:paddingLeft="10dp"
+android:paddingTop="10dp"
+android:paddingRight="10dp"
+android:paddingBottom="10dp" >
+<Button
+    android:id="@+id/chod"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:onClick="klikloSa"
+    android:text="Spusť ma"
+    tools:ignore="ButtonStyle" />
+<Button
+    android:id="@+id/koniec"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:onClick="ukonci"
+    android:text="Koniec"
+    tools:ignore="ButtonStyle" />
+</LinearLayout>
+    </LinearLayout>
