@@ -8,12 +8,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileActivity extends AppCompatActivity {
     private Button logOut;
     private ImageView englishTest;
+    private TextView userName;
+    private User user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +25,9 @@ public class ProfileActivity extends AppCompatActivity {
 
         logOut = (Button) findViewById(R.id.signOut);
         englishTest = (ImageView) findViewById(R.id.englishTest);
+        userName = (TextView) findViewById(R.id.userName);
+
+        userName.setText(user.getName());
 
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -97,7 +97,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/banner"
         android:layout_width="252dp"
         android:layout_height="261dp"
         app:layout_constraintEnd_toEndOf="parent"
