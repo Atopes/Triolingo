@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgrund3"
+    android:background="@drawable/background2"
     tools:context=".EnglishTestsActivity">
 
     <RadioGroup
@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
+            android:shadowColor="#3F51B5"
             android:text="Koľko máš rokov?" />
 
         <RadioButton
@@ -91,7 +92,7 @@
         android:text="How are you?"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="222dp"
-        tools:layout_editor_absoluteY="87dp" />
+        tools:layout_editor_absoluteX="225dp"
+        tools:layout_editor_absoluteY="82dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
