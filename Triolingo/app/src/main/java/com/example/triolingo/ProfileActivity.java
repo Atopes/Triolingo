@@ -1,7 +1,9 @@
 package com.example.triolingo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,14 +11,24 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ProfileActivity extends AppCompatActivity {
-    private Button logOut;
     private ImageView englishTest;
-    private TextView userName;
-    private User user;
+
+    private FirebaseUser user;
+    private DatabaseReference reference;
+    private String userID;
+
+    private Button logOut;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +37,6 @@ public class ProfileActivity extends AppCompatActivity {
 
         logOut = (Button) findViewById(R.id.signOut);
         englishTest = (ImageView) findViewById(R.id.englishTest);
-        userName = (TextView) findViewById(R.id.userName);
-
-        userName.setText(user.getName());
 
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +49,37 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ProfileActivity.this,EnglishTestsActivity.class));
+            }
+        });
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users");
+        userID = user.getUid();
+
+        final TextView textViewWelcomeClient = (TextView) findViewById(R.id.userName);
+
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.child("Users").getValue(User.class);
+
+                if (userProfile != null) { // bude null -> nejaký problém vo Firebase -> Realtime Database -> Data
+                    // (neukazuje zaregistrovených userov, ale v Autenthication -> Users, sa nachádzajú ¯\_(ツ)_/¯ )
+                    // (pozn. tiež v RegisterUser r. 120-121)
+
+                    String fullName = userProfile.name;
+
+                    String[] editFullName = fullName.split(" ");
+                    String firstName = editFullName[0];
+
+                    textViewWelcomeClient.setText("Hello, "+ firstName);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(ProfileActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
             }
         });
     }

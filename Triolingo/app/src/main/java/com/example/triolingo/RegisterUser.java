@@ -10,6 +10,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,10 +22,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener{
-    private TextView registerUser,banner;
-    private FirebaseAuth mAuth;
+    private TextView registerUser;
+    private ImageView banner;
     private EditText editTextFullName, editTextEmail, editTextPassword, editTextGender;
     private ProgressBar progressBar;
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +36,14 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
         mAuth = FirebaseAuth.getInstance();
 
-        banner = (TextView) findViewById(R.id.banner);
+        banner = (ImageView) findViewById(R.id.banner);
         banner.setOnClickListener(this);
 
         registerUser = (Button) findViewById(R.id.registerUser);
         registerUser.setOnClickListener(this);
 
         editTextFullName = (EditText) findViewById(R.id.fullName);
-        editTextGender = (EditText) findViewById(R.id.age);
+        editTextGender = (EditText) findViewById(R.id.gender);
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPassword = (EditText) findViewById(R.id.password);
 
@@ -55,6 +58,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.registerUser:
                 registerUser();
+                break;
         }
     }
 
@@ -90,18 +94,18 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
             return;
         }
         if (password.length() < 6){
-            editTextPassword.setError("Minimal lenght should be 6 characters!");
+            editTextPassword.setError("Minimal length should be 6 characters!");
             editTextPassword.requestFocus();
             return;
         }
 
         progressBar.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(email,password)
+        mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            User user = new User(fullName, email,gender);
+                            User user = new User(fullName, email, gender);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -109,15 +113,20 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
-                                        Toast.makeText(RegisterUser.this,"User has been registered succesfully!",Toast.LENGTH_LONG).show();
-                                        progressBar.setVisibility(View.VISIBLE);
+                                        Toast.makeText(RegisterUser.this,"User has been registered successfully!",Toast.LENGTH_LONG).show();
+                                        progressBar.setVisibility(View.GONE);
                                     }
                                     else {
+                                        // nastane tento prípad, i keď, neovplyvňuje to vytvorenie alebo registáciu používateľa
+                                        // (pozn. tiež v ProfileActivity r. 67-69)
                                         Toast.makeText(RegisterUser.this, "Failed to register! Try again!",Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
                                 }
                             });
+                        }else {
+                            Toast.makeText(RegisterUser.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
+                            progressBar.setVisibility(View.GONE);
                         }
                     }
                 });

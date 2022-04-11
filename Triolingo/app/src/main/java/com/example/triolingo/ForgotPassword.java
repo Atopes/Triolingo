@@ -39,7 +39,6 @@ public class ForgotPassword extends AppCompatActivity {
                 resetPassword();
             }
         });
-
     }
     private void resetPassword(){
         String email = emailEditText.getText().toString().trim();
@@ -49,27 +48,26 @@ public class ForgotPassword extends AppCompatActivity {
             emailEditText.requestFocus();
             return;
         }
-
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             emailEditText.setError("Please provide valid email!");
             emailEditText.requestFocus();
             return;
         }
+
         progressBar.setVisibility(View.VISIBLE);
         auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
                 if (task.isSuccessful()){
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(ForgotPassword.this,"Check your email to reset your password!",Toast.LENGTH_LONG).show();
-
                 }
                 else {
-                    Toast.makeText(ForgotPassword.this,"Try agaim!",Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+                    Toast.makeText(ForgotPassword.this,"Something went wrong! Try again!",Toast.LENGTH_LONG).show();
                 }
             }
         });
-
     }
-
 }

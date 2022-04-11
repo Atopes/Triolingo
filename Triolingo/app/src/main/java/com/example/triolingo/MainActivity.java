@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         register = (TextView) findViewById(R.id.register);
         register.setOnClickListener(this);
 
@@ -49,21 +50,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         forgotPassword = (TextView) findViewById(R.id.forgotPassword);
         forgotPassword.setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.register:
-                startActivity(new Intent(this,RegisterUser.class));
+                startActivity(new Intent(this, RegisterUser.class));
                 break;
-
             case R.id.signIn:
                 userLogin();
                 break;
             case R.id.forgotPassword:
-                startActivity(new Intent(this,ForgotPassword.class));
+                startActivity(new Intent(this, ForgotPassword.class));
                 break;
         }
     }
@@ -72,9 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
 
-
         if (email.isEmpty()){
-            editTextEmail.setError("Email is requird!");
+            editTextEmail.setError("Email is required!");
             editTextEmail.requestFocus();
             return;
         }
@@ -83,35 +81,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             editTextEmail.requestFocus();
             return;
         }
-
         if (password.isEmpty()){
             editTextPassword.setError("Password is required!");
             editTextPassword.requestFocus();
             return;
         }
         if (password.length() < 6){
-            editTextPassword.setError("Min password lenght is 6 characters!");
+            editTextPassword.setError("Min. password length is 6 characters!");
             editTextPassword.requestFocus();
             return;
         }
 
         progressBar.setVisibility(View.VISIBLE);
 
-        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
                     if (user.isEmailVerified()) {
+                        progressBar.setVisibility(View.GONE);
                         startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                     } else {
+                        progressBar.setVisibility(View.GONE);
                         user.sendEmailVerification();
-                        Toast.makeText(MainActivity.this, "CHeck your email to verify your account!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Check your email to verify your account!", Toast.LENGTH_LONG).show();
                     }
                 }
                 else {
-                    Toast.makeText(MainActivity.this, "Failed to login! Please check your credentials", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
+                    Toast.makeText(MainActivity.this, "Failed to login! Please check your credentials!", Toast.LENGTH_LONG).show();
                 }}
         });
     }
