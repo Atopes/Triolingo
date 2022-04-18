@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "207515970158",
-    "firebase_url": "https://triolingo-dbec9-default-rtdb.firebaseio.com",
-    "project_id": "triolingo-dbec9",
-    "storage_bucket": "triolingo-dbec9.appspot.com"
+    "project_number": "4415077916",
+    "project_id": "triolingo-d6bc4",
+    "storage_bucket": "triolingo-d6bc4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:207515970158:android:800f45500f7bcb4cd2547f",
+        "mobilesdk_app_id": "1:4415077916:android:1a138b9021344e5303a9d9",
         "android_client_info": {
           "package_name": "com.example.triolingo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "207515970158-7uij59mg0fm8atj7uhqsjcd0ai8m5htj.apps.googleusercontent.com",
+          "client_id": "4415077916-ul4pnq6vfq7pifs9fhcdstmgelfem8jf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC9RR01nAfP348AXX9KfV30GTDm67oarb4"
+          "current_key": "AIzaSyCt5EeYmtaLFqgrFJdAWUu46LoPoAl9AuU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "207515970158-7uij59mg0fm8atj7uhqsjcd0ai8m5htj.apps.googleusercontent.com",
+              "client_id": "4415077916-ul4pnq6vfq7pifs9fhcdstmgelfem8jf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

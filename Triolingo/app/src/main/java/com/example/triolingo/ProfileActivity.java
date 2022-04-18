@@ -62,11 +62,9 @@ public class ProfileActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User userProfile = snapshot.child("Users").getValue(User.class);
+                User userProfile = snapshot.getValue(User.class);
 
-                if (userProfile != null) { // bude null -> nejaký problém vo Firebase -> Realtime Database -> Data
-                    // (neukazuje zaregistrovených userov, ale v Autenthication -> Users, sa nachádzajú ¯\_(ツ)_/¯ )
-                    // (pozn. tiež v RegisterUser r. 120-121)
+                if (userProfile != null) {
 
                     String fullName = userProfile.name;
 

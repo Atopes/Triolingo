@@ -117,8 +117,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                         progressBar.setVisibility(View.GONE);
                                     }
                                     else {
-                                        // nastane tento prípad, i keď, neovplyvňuje to vytvorenie alebo registáciu používateľa
-                                        // (pozn. tiež v ProfileActivity r. 67-69)
                                         Toast.makeText(RegisterUser.this, "Failed to register! Try again!",Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
