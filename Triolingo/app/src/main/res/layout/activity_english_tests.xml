@@ -24,38 +24,57 @@
             android:layout_height="wrap_content"
             android:onClick="onRadioButtonClicked"
             android:shadowColor="#3F51B5"
-            android:text="Koľko máš rokov?" />
+            android:text="Koľko máš rokov?"
+            android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/option2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ako sa máš?" />
+            android:text="Ako sa máš?"
+            android:textColor="#0C0B0B" />
 
         <RadioButton
             android:id="@+id/option3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Odkiaľ si?" />
+            android:text="Odkiaľ si?"
+            android:textColor="#151313" />
 
         <RadioButton
             android:id="@+id/option4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Koľko máš rokov?" />
+            android:text="Koľko máš rokov?"
+            android:textColor="#100C0C"
+            android:textColorHint="#000000" />
 
     </RadioGroup>
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/buttonNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="#4B4B65"
         android:backgroundTint="#4B4B65"
-        android:text="Button"
+        android:onClick="onNext"
+        android:text="Next"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="304dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#4B4B65"
+        android:backgroundTint="#4B4B65"
+        android:onClick="onPrevious"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView7"
@@ -86,10 +105,11 @@
         tools:layout_editor_absoluteY="142dp" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="How are you?"
+        android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="225dp"

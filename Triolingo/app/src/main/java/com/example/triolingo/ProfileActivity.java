@@ -21,14 +21,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 public class ProfileActivity extends AppCompatActivity {
     private ImageView englishTest;
 
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userID;
-
     private Button logOut;
+    private int scorebuffer,score,level;
+    private TextView levelTxt,scoreTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         logOut = (Button) findViewById(R.id.signOut);
         englishTest = (ImageView) findViewById(R.id.englishTest);
+        levelTxt = (TextView) findViewById(R.id.level);
+        scoreTxt = (TextView) findViewById(R.id.score);
 
         logOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +60,7 @@ public class ProfileActivity extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
-
+        UpdateStats();
         final TextView textViewWelcomeClient = (TextView) findViewById(R.id.userName);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -80,5 +85,15 @@ public class ProfileActivity extends AppCompatActivity {
                 Toast.makeText(ProfileActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
             }
         });
+    }
+    public void UpdateStats(){
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+             scorebuffer = extras.getInt("score");
+            //The key argument here must match that used in the other activity
+        }
+        score += scorebuffer;
+        scoreTxt.setText(score);
+        levelTxt.setText(1 + (score/100));
     }
 }
