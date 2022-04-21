@@ -47,7 +47,7 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(ProfileActivity.this,MainActivity.class));
             }
         });
-        englishTest.setOnClickListener(new View.OnClickListener() {
+       englishTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ProfileActivity.this,EnglishTestsActivity.class));
@@ -93,5 +93,8 @@ public class ProfileActivity extends AppCompatActivity {
         score += scorebuffer;
         scoreTxt.setText("Your score: " + String.valueOf(score));
         levelTxt.setText("Your level: " + String.valueOf(1 + (score/100)));
+    }
+    public void startTest(View view) {
+        startActivity(new Intent(ProfileActivity.this,EnglishTestsActivity.class));
     }
 }
