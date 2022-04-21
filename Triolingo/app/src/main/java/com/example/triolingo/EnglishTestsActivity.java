@@ -13,19 +13,23 @@ import org.w3c.dom.Text;
 
 public class EnglishTestsActivity extends AppCompatActivity {
 
-    private RadioButton option1,option2,option3,option4;
+    private RadioButton option1, option2, option3, option4;
     private Button buttonNext;
     private TextView question;
-    public int[] UserAnswers=new int[10];
-    public int[] CorrectAnswers = new int[10];//pocet otazok
+    public int[] UserAnswers = new int[10];
+    public int[] CorrectAnswers = new int[10]; //pocet otazok
     private String[] questions = new String[10];
     private String[][] DefinedAnswers = new String[4][10];
-    private int activeQuestion = 0,score=0;
+    private int activeQuestion = 0, score = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_english_tests);
+
+        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+        intent.putExtra("score", score);
+        startActivity(intent);
 
         question = (TextView) findViewById(R.id.question);
         option1 = (RadioButton) findViewById(R.id.option1);
@@ -42,17 +46,23 @@ public class EnglishTestsActivity extends AppCompatActivity {
                 {"3b","4c","1a","2d","","","","","",""},
                 {"4c","1a","2d","3b","","","","","",""}};
     }
+
     public void onComplete(){
-        for (int i =0;i<questions.length;i++){
-            if (CorrectAnswers[i]==UserAnswers[i]){
+        for (int i = 0; i < questions.length; i++){
+            if (CorrectAnswers[i] == UserAnswers[i]){
                 score++;
             }
             if(score == 10){
-                score+= 5;
+                score += 5;
             }
         }
         System.out.println(score);
+
+        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+        intent.putExtra("score", score);
+        startActivity(intent);
     }
+
     public void onNext(View view){
         if(activeQuestion == 9){
             onComplete();
@@ -60,22 +70,24 @@ public class EnglishTestsActivity extends AppCompatActivity {
             i.putExtra("score",score);
             startActivity(i);
 
-        }else{
+        }else {
             activeQuestion++;
             loadQuestion();
             if (activeQuestion ==8){
                 buttonNext.setText("Finish");
-            }else{
+            }else {
                 buttonNext.setText("Next");
             }
         }
     }
+
     public void onPrevious(View view){
         if(activeQuestion != 0) {
             activeQuestion--;
             loadQuestion();
         }
     }
+
     public void loadQuestion(){
         question.setText(questions[activeQuestion]);
         option1.setText(DefinedAnswers[0][activeQuestion]);
@@ -83,6 +95,7 @@ public class EnglishTestsActivity extends AppCompatActivity {
         option3.setText(DefinedAnswers[2][activeQuestion]);
         option4.setText(DefinedAnswers[3][activeQuestion]);
     }
+
     public void onRadioButtonClicked(View view){
         boolean checked = ((RadioButton) view).isChecked();
 
@@ -108,6 +121,5 @@ public class EnglishTestsActivity extends AppCompatActivity {
                 }
                 break;
         }
-
     }
 }

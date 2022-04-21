@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,8 +20,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
 public class ProfileActivity extends AppCompatActivity {
     private ImageView englishTest;
 
@@ -30,8 +27,8 @@ public class ProfileActivity extends AppCompatActivity {
     private DatabaseReference reference;
     private String userID;
     private Button logOut;
-    private int scorebuffer,score,level;
-    private TextView levelTxt,scoreTxt;
+    private int scorebuffer = 0, score = 0, level = 1;
+    private TextView levelTxt, scoreTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +73,7 @@ public class ProfileActivity extends AppCompatActivity {
                     String[] editFullName = fullName.split(" ");
                     String firstName = editFullName[0];
 
-                    textViewWelcomeClient.setText("Hello, "+ firstName);
+                    textViewWelcomeClient.setText(firstName);
                 }
             }
 
@@ -87,13 +84,14 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
     public void UpdateStats(){
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-             scorebuffer = extras.getInt("score");
-            //The key argument here must match that used in the other activity
-        }
+        try {
+            Intent intent = getIntent();
+            scorebuffer = intent.getIntExtra("score", 0);
+        } catch (Exception e) {
+            System.out.println("Extras empty..."); }
+
         score += scorebuffer;
-        scoreTxt.setText(score);
-        levelTxt.setText(1 + (score/100));
+        scoreTxt.setText("Your score: " + String.valueOf(score));
+        levelTxt.setText("Your level: " + String.valueOf(1 + (score/100)));
     }
 }
