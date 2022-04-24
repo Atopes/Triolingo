@@ -2,7 +2,9 @@ package com.example.triolingo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -48,23 +50,25 @@ public class EnglishTestsActivity extends AppCompatActivity {
 
     public void onComplete(){
         for (int i = 0; i < questions.length; i++){
+            System.out.print("\nUser answer:" + i + " - " + UserAnswers[i]);
             if (CorrectAnswers[i] == UserAnswers[i]){
-                System.out.println(UserAnswers[i]);
                 score++;
+                System.out.print(" => Correct!");
                 if(score == 10){
                     score += 5;
                 }
             }
         }
-        System.out.println(score);
+        System.out.println("\nScore: " + score);
     }
 
     public void onNext(View view){
         radioGroup.clearCheck();
         if(activeQuestion == 9){
             onComplete();
+
             Intent i = new Intent(this, ProfileActivity.class);
-            i.putExtra("score",score);
+            i.putExtra("score", score);
             startActivity(i);
 
         }else {
@@ -107,16 +111,19 @@ public class EnglishTestsActivity extends AppCompatActivity {
             case R.id.option2:
                 if (checked) {
                     UserAnswers[activeQuestion] = 2;
+                    System.out.println(UserAnswers[activeQuestion]);
                 }
                 break;
             case R.id.option3:
                 if (checked) {
                     UserAnswers[activeQuestion] = 3;
+                    System.out.println(UserAnswers[activeQuestion]);
                 }
                 break;
             case R.id.option4:
                 if (checked) {
                     UserAnswers[activeQuestion] = 4;
+                    System.out.println(UserAnswers[activeQuestion]);
                 }
                 break;
         }

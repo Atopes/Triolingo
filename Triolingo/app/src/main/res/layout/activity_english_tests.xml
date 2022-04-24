@@ -33,6 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:buttonTint="#938383"
+            android:onClick="onRadioButtonClicked"
             android:text="Ako sa máš?"
             android:textColor="#0C0B0B" />
 
@@ -41,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:buttonTint="#938383"
+            android:onClick="onRadioButtonClicked"
             android:text="Odkiaľ si?"
             android:textColor="#151313" />
 
@@ -49,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:buttonTint="#938383"
+            android:onClick="onRadioButtonClicked"
             android:text="Koľko je hodín?"
             android:textColor="#100C0C"
             android:textColorHint="#000000" />

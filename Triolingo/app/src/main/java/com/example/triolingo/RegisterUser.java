@@ -26,6 +26,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     private ImageView banner;
     private EditText editTextFullName, editTextEmail, editTextPassword, editTextGender;
     private ProgressBar progressBar;
+    private int score = 0;
 
     private FirebaseAuth mAuth;
 
@@ -105,7 +106,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            User user = new User(fullName, email, gender);
+                            User user = new User(fullName, email, gender, 0);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -117,13 +118,13 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                         progressBar.setVisibility(View.GONE);
                                     }
                                     else {
-                                        Toast.makeText(RegisterUser.this, "Failed to register! Try again!",Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RegisterUser.this, "Failed to register!1 Try again!",Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
                                 }
                             });
                         }else {
-                            Toast.makeText(RegisterUser.this, "Failed to register! Try again!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterUser.this, "Failed to register!2 Try again!", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }

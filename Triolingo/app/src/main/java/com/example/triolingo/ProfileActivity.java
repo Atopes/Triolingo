@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +22,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ProfileActivity extends AppCompatActivity {
     private ImageView englishTest;
 
@@ -27,7 +32,7 @@ public class ProfileActivity extends AppCompatActivity {
     private DatabaseReference reference;
     private String userID;
     private Button logOut;
-    private int scorebuffer = 0, score = 0, level = 1;
+    private int score = 0, level = 1;
     private TextView levelTxt, scoreTxt;
 
     @Override
@@ -57,42 +62,53 @@ public class ProfileActivity extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
-        UpdateStats();
+
         final TextView textViewWelcomeClient = (TextView) findViewById(R.id.userName);
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userProfile = snapshot.getValue(User.class);
 
                 if (userProfile != null) {
+                    score = userProfile.score;
 
                     String fullName = userProfile.name;
-
                     String[] editFullName = fullName.split(" ");
                     String firstName = editFullName[0];
 
                     textViewWelcomeClient.setText(firstName);
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(ProfileActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
             }
         });
+
+        UpdateStats();
     }
     public void UpdateStats(){
-        try {
-            Intent intent = getIntent();
-            scorebuffer = intent.getIntExtra("score", 0);
-        } catch (Exception e) {
-            System.out.println("Extras empty..."); }
+        reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User userProfile = snapshot.getValue(User.class);
 
-        score += scorebuffer;
-        scoreTxt.setText("Your score: " + String.valueOf(score));
-        levelTxt.setText("Your level: " + String.valueOf(1 + (score/100)));
+                if (userProfile != null) {
+                    Intent intent = getIntent();
+                    score += intent.getIntExtra("score", 0);
+
+                    reference.child(userID).child("score").setValue(score);
+
+                    scoreTxt.setText("Your score: " + String.valueOf(score));
+                    levelTxt.setText("Your level: " + String.valueOf(1 + (score/100)));
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(ProfileActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
     public void startTest(View view) {
         startActivity(new Intent(ProfileActivity.this,EnglishTestsActivity.class));
