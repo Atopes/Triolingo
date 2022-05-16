@@ -71,7 +71,7 @@
         android:layout_width="67dp"
         android:layout_height="70dp"
         android:layout_marginBottom="108dp"
-        android:onClick="startTest"
+        android:onClick="engTestMenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.046"

@@ -70,6 +70,7 @@ public class EnglishTestsActivity extends AppCompatActivity {
             Intent i = new Intent(this, ProfileActivity.class);
             i.putExtra("score", score);
             startActivity(i);
+            finish();
 
         }else {
             activeQuestion++;

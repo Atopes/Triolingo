@@ -49,13 +49,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(ProfileActivity.this,MainActivity.class));
+                startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+                finish();
             }
         });
-       englishTest.setOnClickListener(new View.OnClickListener() {
+        englishTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ProfileActivity.this,EnglishTestsActivity.class));
+                startActivity(new Intent(ProfileActivity.this, TestsMenu.class));
             }
         });
 
@@ -110,7 +111,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
     }
-    public void startTest(View view) {
-        startActivity(new Intent(ProfileActivity.this,EnglishTestsActivity.class));
+    public void engTestMenu(View view) {
+        startActivity(new Intent(ProfileActivity.this, TestsMenu.class));
     }
 }
