@@ -1,0 +1,69 @@
+1. Prelož do SK: They
+Vy
+Ty
+Ja
+Oni/ony
+Oni/ony
+
+2. Prelož do SK: My
+Vy
+Ja
+Môj
+Tvoj
+Môj
+
+3. Prelož do SK: Your
+Tvoj/váš
+Ich
+Vy
+Môj
+Tvoj/váš
+
+4. Prelož do SK: His
+Jej
+Jeho (od on)
+Jej
+On
+Jeho
+
+5. Prelož do SK: Her
+Jej
+Ona
+Jeho (od on)
+On
+Jej
+
+6. Prelož do SK: Its
+Ono
+Ich
+On
+Jeho/toho (od ono)
+Jeho/toho (od ono)
+
+7. Prelož do SK: Our
+Ich
+Náš
+Tvoj/váš
+My
+Náš
+
+8. Prelož do SK: Their
+Oni
+On
+Tvoj
+Ich
+Ich
+
+9. Prelož do EN: Náš
+We
+Me's
+We's
+Our
+Our
+
+8. Prelož do SK: She
+Ty
+Oni/ony
+Ona
+On
+Ona
