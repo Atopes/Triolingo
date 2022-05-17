@@ -36,7 +36,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest"
+                android:onClick="startTest0"
                 android:text="Test 0"
                 android:textSize="25sp" />
 
@@ -48,7 +48,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest"
+                android:onClick="startTest1"
                 android:text="Test 1"
                 android:textSize="25sp" />
 
@@ -60,7 +60,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest"
+                android:onClick="startTest2"
                 android:text="Test 2"
                 android:textSize="25sp" />
 
@@ -72,7 +72,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest"
+                android:onClick="startTest3"
                 android:text="Test 3"
                 android:textSize="25sp" />
 
@@ -84,7 +84,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest"
+                android:onClick="startTest4"
                 android:text="Test 4"
                 android:textSize="25sp" />
 
@@ -96,7 +96,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest"
+                android:onClick="startTest5"
                 android:text="Test 5"
                 android:textSize="25sp" />
 
@@ -108,21 +108,8 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest"
+                android:onClick="startTest6"
                 android:text="Test 6"
-                android:textSize="25sp" />
-
-            <Button
-                android:id="@+id/test7"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginRight="100dp"
-                android:layout_marginBottom="50dp"
-                android:backgroundTint="#000000"
-                android:onClick="startTest"
-                android:text="Test 7"
                 android:textSize="25sp" />
 
         </LinearLayout>

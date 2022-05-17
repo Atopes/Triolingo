@@ -1,0 +1,31 @@
+Prelož //typ testu / čo má byť napísané hore
+Question1
+answer1
+answer2
+answer3
+answer4
+4 //Correct answer position
+Question2
+answer1
+answer2
+answer3
+answer4
+3 //Correct answer position
+Question3
+answer1
+answer2
+answer3
+answer4
+4 //Correct answer position
+Question4
+answer1
+answer2
+answer3
+answer4
+1 //Correct answer position
+Question5
+answer1
+answer2
+answer3
+answer4
+2 //Correct answer position

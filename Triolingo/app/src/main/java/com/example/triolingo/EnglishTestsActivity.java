@@ -14,16 +14,17 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.Objects;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class EnglishTestsActivity extends AppCompatActivity {
 
     private RadioButton option1, option2, option3, option4;
     private Button buttonNext;
     private TextView question;
     private RadioGroup radioGroup;
-    public int[] UserAnswers = new int[10];
-    public int[] CorrectAnswers = new int[10]; //pocet otazok
-    private String[] questions = new String[10];
-    private String[][] DefinedAnswers = new String[4][10];
+    public String[] UserAnswers = new String[10];
     private int activeQuestion = 0, score = 0;
 
     @Override
@@ -39,19 +40,13 @@ public class EnglishTestsActivity extends AppCompatActivity {
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         buttonNext = (Button) findViewById(R.id.buttonNext);
 
-        CorrectAnswers = new int[]{2, 1, 1, 1, 1, 1, 1, 1, 1, 4};
-        questions = new String[]{"How are you?","Have a nice day!","I'm sorry, I don't understand.","The information is true.","See you later.","That’s so kind of you.","Could you repeat that, please?","Where do you work?","Let me to introduce myself.","What time is it?"};
-        DefinedAnswers = new String[][]{
-                {"Koľko máš rokov?","Želám ti / vám pekný deň.","Mrzí ma to, ale nerozumiem vám.","Informácia je pravdivá.","Uvidíme sa neskôr.","To je od teba / vás také milé.","Mohli by ste mi to zopakovať, prosím?","Kde pracuješ / pracujete?","Dovoľte, aby som sa predstavil.","Čo je to?"},
-                {"Ako sa máš?","Mám sa dobre.","Mrzí ma to, ale niesom hladný.","Informácie je nepravdivá.","Uvidíme sa zajtra.","Som skutočne vďačný/á.","Mohol by si prosím hovoriť pomalšie?","Kde bývaš / bývate?","Moje meno je ...","Aké je počasie?"},
-                {"Odkiaľ si?","Dlho sme sa nevideli.","Mrzí ma to, ale už musím ísť.","Chýba nám správna informácia.","Dlho sme sa nevideli.","Ďakujem za všetko","Čo tým chceš povedať?","Ako dlho si / ste tu?","Teší ma, že vás poznávam.","Čo je dnes za deň?"},
-                {"Koľko je hodín?","Dnes mám dobrý deň","Mrzí ma to, ale nepáči sa mi to.","Nesprávna informácia.","Dlho sa neuvidíme.","Naozaj si to vážim.","Čo to znamená?","Odkiaľ si / ste?","Bolo mi veľkým potešením.","Aký je čas?"}};
+        loadQuestion();
     }
 
     public void onComplete(){
-        for (int i = 0; i < questions.length; i++){
+        for (int i = 0; i < TestsMenu.questions.length; i++){
             System.out.print("\nUser answer:" + i + " - " + UserAnswers[i]);
-            if (CorrectAnswers[i] == UserAnswers[i]){
+            if (Objects.equals(TestsMenu.correctAnswers[i], UserAnswers[i])){
                 score++;
                 System.out.print(" => Correct!");
                 if(score == 10){
@@ -92,11 +87,26 @@ public class EnglishTestsActivity extends AppCompatActivity {
     }
 
     public void loadQuestion(){
-        question.setText(questions[activeQuestion]);
-        option1.setText(DefinedAnswers[0][activeQuestion]);
-        option2.setText(DefinedAnswers[1][activeQuestion]);
-        option3.setText(DefinedAnswers[2][activeQuestion]);
-        option4.setText(DefinedAnswers[3][activeQuestion]);
+        int[] a=new int[]{0,1,2,3};
+        shuffleArray(a);
+        question.setText(TestsMenu.questions[activeQuestion]);
+        option1.setText(TestsMenu.definedAnswers[a[0]][activeQuestion]);
+        option2.setText(TestsMenu.definedAnswers[a[1]][activeQuestion]);
+        option3.setText(TestsMenu.definedAnswers[a[2]][activeQuestion]);
+        option4.setText(TestsMenu.definedAnswers[a[3]][activeQuestion]);
+    }
+    static void shuffleArray(int[] ar)
+    {
+        // If running on Java 6 or older, use `new Random()` on RHS here
+        Random rnd = ThreadLocalRandom.current();
+        for (int i = ar.length - 1; i > 0; i--)
+        {
+            int index = rnd.nextInt(i + 1);
+            // Simple swap
+            int a = ar[index];
+            ar[index] = ar[i];
+            ar[i] = a;
+        }
     }
 
     public void onRadioButtonClicked(View view){
@@ -105,25 +115,25 @@ public class EnglishTestsActivity extends AppCompatActivity {
         switch (view.getId()){
             case R.id.option1:
                 if (checked) {
-                    UserAnswers[activeQuestion] = 1;
+                    UserAnswers[activeQuestion] =(String) option1.getText();
                     System.out.println(UserAnswers[activeQuestion]);
                 }
                 break;
             case R.id.option2:
                 if (checked) {
-                    UserAnswers[activeQuestion] = 2;
+                    UserAnswers[activeQuestion] = (String) option2.getText();
                     System.out.println(UserAnswers[activeQuestion]);
                 }
                 break;
             case R.id.option3:
                 if (checked) {
-                    UserAnswers[activeQuestion] = 3;
+                    UserAnswers[activeQuestion] = (String) option3.getText();
                     System.out.println(UserAnswers[activeQuestion]);
                 }
                 break;
             case R.id.option4:
                 if (checked) {
-                    UserAnswers[activeQuestion] = 4;
+                    UserAnswers[activeQuestion] = (String) option4.getText();
                     System.out.println(UserAnswers[activeQuestion]);
                 }
                 break;

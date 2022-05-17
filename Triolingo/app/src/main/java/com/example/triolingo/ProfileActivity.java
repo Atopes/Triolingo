@@ -32,7 +32,7 @@ public class ProfileActivity extends AppCompatActivity {
     private DatabaseReference reference;
     private String userID;
     private Button logOut;
-    private int score = 0, level = 1;
+    public static int score = 0, level = 1;
     private TextView levelTxt, scoreTxt;
 
     @Override
