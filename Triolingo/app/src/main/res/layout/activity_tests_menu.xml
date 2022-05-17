@@ -112,6 +112,174 @@
                 android:text="Test 6"
                 android:textSize="25sp" />
 
+            <Button
+                android:id="@+id/test7"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 7"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/test8"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 8"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/test9"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 9"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/test10"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 10"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/test11"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 11"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/test12"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 12"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/test13"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 13"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/test14"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 14"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/test15"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 15"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/test16"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 16"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/test17"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 17"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/test18"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 18"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/test19"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 19"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/test20"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="100dp"
+                android:backgroundTint="#000000"
+                android:onClick="startTest6"
+                android:text="Test 20"
+                android:textSize="25sp" />
+
         </LinearLayout>
     </ScrollView>
 

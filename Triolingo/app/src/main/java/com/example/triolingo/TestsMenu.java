@@ -18,7 +18,7 @@ public class TestsMenu extends AppCompatActivity {
     public static String[] questions = new String[10];
     public static String[][] definedAnswers = new String[4][10];
     private final String[] testNames=new String[]{"Úvodný test","Frázy","Predložky","Vety","Zámená 1","Zámená 2", "Zámená 3","Časti tela","Pritomný a priebehový čas","Veľa,mnoho,veľmi" ,"Členy", "Modálne slovesá" , "Say, Tell, Speak, Talk" , "Vzťažné zámená" ,"Past tenses","Present Perfect 1", "Present Perfect 2","Used to","Present Perfect/Present Past","Pre-Intermediate test 1", "Pre-Intermediate test 2"};
-    private Button test0,test1,test2,test3,test4,test5,test6;
+    private Button test0,test1,test2,test3,test4,test5,test6,test7,test8,test9,test10,test11,test12,test13,test14,test15,test16,test17,test18,test19,test20;
     private int internalCounter=0,externalCounter=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,21 @@ public class TestsMenu extends AppCompatActivity {
         test4 = (Button) findViewById(R.id.test4);
         test5 = (Button) findViewById(R.id.test5);
         test6 = (Button) findViewById(R.id.test6);
+        test7 = (Button) findViewById(R.id.test7);
+        test8 = (Button) findViewById(R.id.test8);
+        test9 = (Button) findViewById(R.id.test9);
+        test10 = (Button) findViewById(R.id.test10);
+        test11 = (Button) findViewById(R.id.test11);
+        test12 = (Button) findViewById(R.id.test12);
+        test13 = (Button) findViewById(R.id.test13);
+        test14 = (Button) findViewById(R.id.test14);
+        test15 = (Button) findViewById(R.id.test15);
+        test16 = (Button) findViewById(R.id.test16);
+        test17 = (Button) findViewById(R.id.test17);
+        test18 = (Button) findViewById(R.id.test18);
+        test19 = (Button) findViewById(R.id.test19);
+        test20 = (Button) findViewById(R.id.test20);
+
 
         test0.setText(testNames[0]);
         test1.setText(testNames[1]);
@@ -39,6 +54,20 @@ public class TestsMenu extends AppCompatActivity {
         test4.setText(testNames[4]);
         test5.setText(testNames[5]);
         test6.setText(testNames[6]);
+        test7.setText(testNames[7]);
+        test8.setText(testNames[8]);
+        test9.setText(testNames[9]);
+        test10.setText(testNames[10]);
+        test11.setText(testNames[11]);
+        test12.setText(testNames[12]);
+        test13.setText(testNames[13]);
+        test14.setText(testNames[14]);
+        test15.setText(testNames[15]);
+        test16.setText(testNames[16]);
+        test17.setText(testNames[17]);
+        test18.setText(testNames[18]);
+        test19.setText(testNames[19]);
+        test20.setText(testNames[20]);
     }
 
     public void startTest0(View view) {
