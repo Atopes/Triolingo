@@ -62,7 +62,7 @@
         android:id="@+id/buttonNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
+        android:layout_marginStart="96dp"
         android:layout_marginBottom="16dp"
         android:background="#4B4B65"
         android:backgroundTint="#4B4B65"
@@ -77,7 +77,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="48dp"
         android:layout_marginBottom="16dp"
         android:background="#4B4B65"
         android:backgroundTint="#4B4B65"
@@ -88,23 +88,11 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
         app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="134dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="40dp"
-        android:text="Preložte túto vetu"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8"
-        app:layout_constraintEnd_toStartOf="@+id/imageView7" />
-
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="255dp"
-        android:layout_height="174dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="306dp"
+        android:layout_height="202dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="132dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,20 +100,20 @@
 
     <ImageView
         android:id="@+id/imageView8"
-        android:layout_width="249dp"
-        android:layout_height="225dp"
+        android:layout_width="185dp"
+        android:layout_height="171dp"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/glassestrio" />
 
     <TextView
         android:id="@+id/question"
-        android:layout_width="140dp"
-        android:layout_height="71dp"
+        android:layout_width="183dp"
+        android:layout_height="102dp"
         android:layout_marginStart="56dp"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="52dp"
         android:text="How are you?"
         android:textAlignment="center"
         android:textColor="#000000"
