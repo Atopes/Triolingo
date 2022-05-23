@@ -19,7 +19,7 @@ public class TestsMenu extends AppCompatActivity {
     public static String[][] definedAnswers = new String[4][10];
     private final String[] testNames=new String[]{"Úvodný test","Frázy","Predložky","Vety","Zámená 1","Zámená 2", "Zámená 3","Časti tela","Pritomný a priebehový čas","Veľa,mnoho,veľmi" ,"Členy", "Modálne slovesá" , "Say, Tell, Speak, Talk" , "Vzťažné zámená" ,"Past tenses","Present Perfect 1", "Present Perfect 2","Used to","Present Perfect/Past","Pre-Intermediate test 1", "Pre-Intermediate test 2"};
     private Button test0,test1,test2,test3,test4,test5,test6,test7,test8,test9,test10,test11,test12,test13,test14,test15,test16,test17,test18,test19,test20;
-    private int internalCounter=0,externalCounter=0;
+    private int internalCounter=0,externalCounter=0,scoreToNextTest=30;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,51 +75,162 @@ public class TestsMenu extends AppCompatActivity {
         startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
     }
     public void startTest1(View view) {
-        if (ProfileActivity.score >=40*1){
+        if (ProfileActivity.score >=scoreToNextTest*1){
             loadTest(1);
             startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
         }else{
-            Toast.makeText(getApplicationContext(), "For this test you need at least " +40*1 +" score.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*1 +" score.", Toast.LENGTH_SHORT).show();
         }
     }
     public void startTest2(View view) {
-        if (ProfileActivity.score >=40*2){
+        if (ProfileActivity.score >=scoreToNextTest*2){
             loadTest(2);
             startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
         }else{
-            Toast.makeText(getApplicationContext(), "For this test you need at least " +40*2 +" score.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*2 +" score.", Toast.LENGTH_SHORT).show();
         }
     }
     public void startTest3(View view) {
-        if (ProfileActivity.score >=40*3){
+        if (ProfileActivity.score >=scoreToNextTest*3){
             loadTest(3);
             startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
         }else{
-            Toast.makeText(getApplicationContext(), "For this test you need at least " +40*3 +" score.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*3 +" score.", Toast.LENGTH_SHORT).show();
         }
     }
     public void startTest4(View view) {
-        if (ProfileActivity.score >=40*4){
+        if (ProfileActivity.score >=scoreToNextTest*4){
             loadTest(4);
             startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
         }else{
-            Toast.makeText(getApplicationContext(), "For this test you need at least " +40*4 +" score.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*4 +" score.", Toast.LENGTH_SHORT).show();
         }
     }
     public void startTest5(View view) {
-        if (ProfileActivity.score >=40*5){
+        if (ProfileActivity.score >=scoreToNextTest*5){
             loadTest(5);
             startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
         }else{
-            Toast.makeText(getApplicationContext(), "For this test you need at least " +40*5 +" score.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*5 +" score.", Toast.LENGTH_SHORT).show();
         }
     }
     public void startTest6(View view) {
-        if (ProfileActivity.score >=40*6){
+        if (ProfileActivity.score >=scoreToNextTest*6){
             loadTest(6);
             startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
         }else{
-            Toast.makeText(getApplicationContext(), "For this test you need at least " +40*6 +" score.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*6 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void startTest7(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(7);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*7 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void startTest8(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(8);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*8 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void startTest9(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(9);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*9 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void startTest10(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(10);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*10 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void startTest11(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(11);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*11 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void startTest12(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(12);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*12 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void startTest13(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(13);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*13 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void startTest14(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(14);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*14 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void startTest15(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(15);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*15 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void startTest16(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(16);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*16 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }public void startTest17(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(17);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*17 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void startTest18(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(18);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*18 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void startTest19(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(19);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*19 +" score.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void startTest20(View view) {
+        if (ProfileActivity.score >=scoreToNextTest*6){
+            loadTest(20);
+            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
+        }else{
+            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*20 +" score.", Toast.LENGTH_SHORT).show();
         }
     }
     public void back(View view) {
