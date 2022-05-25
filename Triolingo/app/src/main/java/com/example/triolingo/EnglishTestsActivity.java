@@ -25,7 +25,8 @@ public class EnglishTestsActivity extends AppCompatActivity {
     private TextView question;
     private RadioGroup radioGroup;
     public String[] UserAnswers = new String[10];
-    private int activeQuestion = 0, score = 0;
+    public int[] usedQuestions=new int[10];
+    private int activeQuestion = 0, score = 0,loadedQuestionCounter=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +41,36 @@ public class EnglishTestsActivity extends AppCompatActivity {
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         buttonNext = (Button) findViewById(R.id.buttonNext);
 
+        ShuffleQuestions();
         loadQuestion();
+    }
+    public void ShuffleQuestions(){
+        Random rd = new Random();
+        boolean foundDuplicate=false;
+        while(loadedQuestionCounter<10) {
+            int a = rd.nextInt(TestsMenu.questions.size()+1)-1;
+            for (int i = 0; i < 10; i++) {
+                if (usedQuestions[i] == a) {
+                    foundDuplicate = true;
+                }
+            }
+            if (!foundDuplicate) {
+                if(a==-1){
+                    a=0;
+                }
+                usedQuestions[loadedQuestionCounter] = a;
+                System.out.println("Used Question"+loadedQuestionCounter+"- "+usedQuestions[loadedQuestionCounter]);
+                loadedQuestionCounter++;
+            } else {
+                foundDuplicate = false;
+            }
+        }
     }
 
     public void onComplete(){
-        for (int i = 0; i < TestsMenu.questions.length; i++){
+        for (int i = 0; i < usedQuestions.length;i++){
             System.out.print("\nUser answer:" + i + " - " + UserAnswers[i]);
-            if (Objects.equals(TestsMenu.correctAnswers[i], UserAnswers[i])){
+            if (Objects.equals(TestsMenu.correctAnswers.get(i), UserAnswers[i])){
                 score++;
                 System.out.print(" => Correct!");
                 if(score == 10){
@@ -87,15 +111,15 @@ public class EnglishTestsActivity extends AppCompatActivity {
     }
 
     public void loadQuestion(){
-        int[] a=new int[]{0,1,2,3};
+        String[] a=new String[]{TestsMenu.definedAnswers1.get(usedQuestions[activeQuestion]),TestsMenu.definedAnswers2.get(usedQuestions[activeQuestion]),TestsMenu.definedAnswers3.get(usedQuestions[activeQuestion]),TestsMenu.definedAnswers4.get(usedQuestions[activeQuestion])};
         shuffleArray(a);
-        question.setText(TestsMenu.questions[activeQuestion]);
-        option1.setText(TestsMenu.definedAnswers[a[0]][activeQuestion]);
-        option2.setText(TestsMenu.definedAnswers[a[1]][activeQuestion]);
-        option3.setText(TestsMenu.definedAnswers[a[2]][activeQuestion]);
-        option4.setText(TestsMenu.definedAnswers[a[3]][activeQuestion]);
+        question.setText(TestsMenu.questions.get(usedQuestions[activeQuestion]));
+        option1.setText(a[0]);
+        option2.setText(a[1]);
+        option3.setText(a[2]);
+        option4.setText(a[3]);
     }
-    static void shuffleArray(int[] ar)
+    static void shuffleArray(String[] ar)
     {
         // If running on Java 6 or older, use `new Random()` on RHS here
         Random rnd = ThreadLocalRandom.current();
@@ -103,7 +127,7 @@ public class EnglishTestsActivity extends AppCompatActivity {
         {
             int index = rnd.nextInt(i + 1);
             // Simple swap
-            int a = ar[index];
+            String a = ar[index];
             ar[index] = ar[i];
             ar[i] = a;
         }
