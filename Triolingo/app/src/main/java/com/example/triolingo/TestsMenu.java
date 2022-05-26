@@ -22,9 +22,10 @@ public class TestsMenu extends AppCompatActivity {
     public static LinkedList<String> definedAnswers3=new LinkedList<String>();
     public static LinkedList<String> definedAnswers4=new LinkedList<String>();
 
-    private final String[] testNames=new String[]{"Úvodný test","Frázy","Predložky","Vety","Zámená 1","Zámená 2", "Zámená 3","Časti tela","Pritomný a priebehový čas","Veľa,mnoho,veľmi" ,"Členy", "Modálne slovesá" , "Say, Tell, Speak, Talk" , "Vzťažné zámená" ,"Past tenses","Present Perfect 1", "Present Perfect 2","Used to","Present Perfect/Past","Pre-Intermediate test 1", "Pre-Intermediate test 2"};
+    public static final String[] testNames=new String[]{"Úvodný test","Frázy","Predložky","Vety","Zámená 1","Zámená 2", "Zámená 3","Časti tela","Pritomný a priebehový čas","Veľa,mnoho,veľmi" ,"Členy", "Modálne slovesá" , "Say, Tell, Speak, Talk" , "Vzťažné zámená" ,"Past tenses","Present Perfect 1", "Present Perfect 2","Used to","Present Perfect/Past","Pre-Intermediate test 1", "Pre-Intermediate test 2"};
     private Button test0,test1,test2,test3,test4,test5,test6,test7,test8,test9,test10,test11,test12,test13,test14,test15,test16,test17,test18,test19,test20;
     private int internalCounter=0,scoreToNextTest=30,id;
+    public static int testID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +82,7 @@ public class TestsMenu extends AppCompatActivity {
         for (int i=0;i<testNames.length;i++){
             if (nazov.equals(testNames[i])){
                 id=i;
+                testID=i;
                 break;
             }
         }
@@ -97,6 +99,12 @@ public class TestsMenu extends AppCompatActivity {
     }
 
     public void loadTest(int id){
+        correctAnswers.clear();
+        questions.clear();
+        definedAnswers1.clear();
+        definedAnswers2.clear();
+        definedAnswers3.clear();
+        definedAnswers4.clear();
         internalCounter=0;
         String filename = ""+id;
         BufferedReader reader;

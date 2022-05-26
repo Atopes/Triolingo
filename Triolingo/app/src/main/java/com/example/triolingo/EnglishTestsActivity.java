@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -24,8 +25,8 @@ public class EnglishTestsActivity extends AppCompatActivity {
     private Button buttonNext;
     private TextView question;
     private RadioGroup radioGroup;
-    public String[] UserAnswers = new String[10];
-    public int[] usedQuestions=new int[10];
+    public static String[] UserAnswers = new String[10];
+    public static int[] usedQuestions=new int[10];
     private int activeQuestion = 0, score = 0,loadedQuestionCounter=0;
 
     @Override
@@ -46,21 +47,28 @@ public class EnglishTestsActivity extends AppCompatActivity {
     }
     public void ShuffleQuestions(){
         Random rd = new Random();
+        loadedQuestionCounter=0;
+        Arrays.fill(usedQuestions, -5);
         boolean foundDuplicate=false;
+        boolean loadedFirst=false;
         while(loadedQuestionCounter<10) {
             int a = rd.nextInt(TestsMenu.questions.size()+1)-1;
+            System.out.println("Generated "+a);
             for (int i = 0; i < 10; i++) {
                 if (usedQuestions[i] == a) {
                     foundDuplicate = true;
                 }
             }
             if (!foundDuplicate) {
-                if(a==-1){
+                if(a==-1 && !loadedFirst || a==0 && !loadedFirst){
                     a=0;
+                    loadedFirst=true;
                 }
-                usedQuestions[loadedQuestionCounter] = a;
-                System.out.println("Used Question"+loadedQuestionCounter+"- "+usedQuestions[loadedQuestionCounter]);
-                loadedQuestionCounter++;
+                if (a!=-1) {
+                    usedQuestions[loadedQuestionCounter] = a;
+                    System.out.println("Used Question" + loadedQuestionCounter + "- " + usedQuestions[loadedQuestionCounter]);
+                    loadedQuestionCounter++;
+                }
             } else {
                 foundDuplicate = false;
             }
@@ -70,7 +78,7 @@ public class EnglishTestsActivity extends AppCompatActivity {
     public void onComplete(){
         for (int i = 0; i < usedQuestions.length;i++){
             System.out.print("\nUser answer:" + i + " - " + UserAnswers[i]);
-            if (Objects.equals(TestsMenu.correctAnswers.get(i), UserAnswers[i])){
+            if (Objects.equals(TestsMenu.correctAnswers.get(usedQuestions[i]), UserAnswers[i])){
                 score++;
                 System.out.print(" => Correct!");
                 if(score == 10){
@@ -86,8 +94,8 @@ public class EnglishTestsActivity extends AppCompatActivity {
         if(activeQuestion == 9){
             onComplete();
 
-            Intent i = new Intent(this, ProfileActivity.class);
-            i.putExtra("score", score);
+            Intent i = new Intent(this, TestResult.class);
+           // i.putExtra("score", score);
             startActivity(i);
             finish();
 
