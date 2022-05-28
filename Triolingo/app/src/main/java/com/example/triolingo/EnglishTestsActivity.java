@@ -1,20 +1,16 @@
 package com.example.triolingo;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
@@ -27,7 +23,9 @@ public class EnglishTestsActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     public static String[] UserAnswers = new String[10];
     public static int[] usedQuestions=new int[10];
-    private int activeQuestion = 0, score = 0,loadedQuestionCounter=0;
+    private int activeQuestion = 0, score = 0;
+    private boolean resultShown=false;
+    private LinkedList<RadioButton> options =new LinkedList<RadioButton>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +39,17 @@ public class EnglishTestsActivity extends AppCompatActivity {
         option4 = (RadioButton) findViewById(R.id.option4);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         buttonNext = (Button) findViewById(R.id.buttonNext);
+        options.add(option1);
+        options.add(option2);
+        options.add(option3);
+        options.add(option4);
 
         ShuffleQuestions();
         loadQuestion();
     }
     public void ShuffleQuestions(){
         Random rd = new Random();
-        loadedQuestionCounter=0;
+        int loadedQuestionCounter=0;
         Arrays.fill(usedQuestions, -5);
         boolean foundDuplicate=false;
         boolean loadedFirst=false;
@@ -90,22 +92,43 @@ public class EnglishTestsActivity extends AppCompatActivity {
     }
 
     public void onNext(View view){
-        radioGroup.clearCheck();
-        if(activeQuestion == 9){
-            onComplete();
-
-            Intent i = new Intent(this, TestResult.class);
-           // i.putExtra("score", score);
-            startActivity(i);
-            finish();
-
+        if (!resultShown) {
+            if (UserAnswers[activeQuestion].equals(TestsMenu.correctAnswers.get(usedQuestions[activeQuestion]))){
+                for (int i = 0; i < options.size(); i++) {
+                    if (options.get(i).getText().toString().equals(UserAnswers[activeQuestion])){
+                        options.get(i).setTextColor(Color.GREEN);
+                    }
+                }
+            }else{
+                for (int i = 0; i < options.size(); i++) {
+                    if (options.get(i).getText().toString().equals(UserAnswers[activeQuestion])){
+                        options.get(i).setTextColor(Color.RED);
+                    }else if(options.get(i).getText().toString().equals(TestsMenu.correctAnswers.get(usedQuestions[activeQuestion]))){
+                        options.get(i).setTextColor(Color.GREEN);
+                    }
+                }
+            }
+            resultShown=true;
         }else {
-            activeQuestion++;
-            loadQuestion();
-            if (activeQuestion == 9){
-                buttonNext.setText("Finish");
-            }else {
-                buttonNext.setText("Next");
+            for (int i = 0; i < options.size(); i++) {
+                options.get(i).setTextColor(Color.BLACK);
+            }
+            radioGroup.clearCheck();
+            if (activeQuestion == 9) {
+                //onComplete();
+                Intent i = new Intent(this, TestResult.class);
+                // i.putExtra("score", score);
+                startActivity(i);
+                finish();
+            } else {
+                activeQuestion++;
+                loadQuestion();
+                if (activeQuestion == 9) {
+                    buttonNext.setText("Finish");
+                } else {
+                    buttonNext.setText("Next");
+                }
+                resultShown=false;
             }
         }
     }
