@@ -1,0 +1,69 @@
+1.Preložte: šošoj
+orol
+pes
+zajac
+papagáj
+zajac
+
+2.Preložte: baran
+graj
+bakro
+levos
+kanalo
+graj
+
+3.Preložte: džuko
+vlk
+pes
+vtáčik
+kôň
+pes
+
+4.Preložte: krava
+grasňi
+graj
+gurunmi
+kanalo
+gurunmi
+
+5.Preložte: graj
+cap
+ježko
+kôň
+klokan
+kôň
+
+6.Preložte: myš
+papin
+ruv
+kanalo
+trozna
+kanalo
+
+7.Preložte: tiviškolo balo
+klokan
+ježko
+cap
+hus
+ježko
+
+8.Preložte: hus
+rikoňi
+džúv
+grasňi
+papin
+papin
+
+9.Preložte: čirikloro
+vtáčik
+potkan
+klokan
+tiger
+vtáčik
+
+10.Preložte: ruv
+capan
+baran
+jeleň
+vlk
+vlk

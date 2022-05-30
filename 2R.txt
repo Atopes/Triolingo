@@ -1,0 +1,68 @@
+1.Preložte: jedna
+trin
+duj 
+jekh
+efta
+jekh
+
+2.Preložte: tri
+duj
+trin
+biš
+šov
+trin
+
+3.Preložte: šesť
+šov
+efta
+ochto 
+eňa
+šov
+
+4.Preložte: desať
+efta
+eňa
+deš
+štar
+deš
+
+5.Preložte: dvadsať
+baš
+biš
+eňa
+deš duj
+biš
+
+6.Preložte: deš u duj
+jedenásť
+dvanásť
+dva
+dvadsať
+
+7.Preložte: deš u štar
+pätnásť
+jedenásť
+štrnásť
+štyri
+štrnásť
+
+8.Preložte: pandž
+päť
+jedenásť
+osem
+štyri
+päť
+
+9.Preložte: efta
+tri
+osem
+sedem
+deväť
+sedem
+
+9.Preložte: eňa
+tri
+dva
+deväť
+osem
+deväť

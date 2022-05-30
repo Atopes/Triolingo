@@ -1,0 +1,83 @@
+1.Preložte: dobrý
+baro
+cikno
+lačho
+nalačho
+lačho
+
+2.Preložte: nalačho
+dobrý
+malý
+veľký
+zlý
+zlý
+
+3.Preložte: malý
+baro
+cikno
+melalo
+daradnuto
+cikno
+
+4.Preložte: baro
+veľký
+pekný 
+zlý
+šťastný
+veľký
+	
+5.Preložte: čistý
+žužo
+čoro
+nevo
+terno
+žužo
+
+5.Preložte: melalo
+zlatý
+špinavý
+nový
+starý
+špinavý
+
+5.Preložte: šťastný
+baro
+bachtalo
+terno
+phuro
+bachtalo
+
+6.Preložte: daradnuto
+vystrašený
+zlatý	
+pekný	
+malý	
+vystrašený
+
+7.Preložte: dôveryhodný
+bučakero
+pačivakero
+godžaver
+barvalo
+pačivakero
+
+8.Preložte: godžaver
+bohatý
+pekný
+chudobný
+múdry
+múdry
+
+9.Preložte: teplý
+tato
+kúčo
+kerado
+bulho
+tato
+
+10.Preložte: šilalo
+úzky
+široký
+studený
+hlboký
+studený

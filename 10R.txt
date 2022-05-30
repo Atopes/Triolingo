@@ -1,0 +1,69 @@
+Preložte: nasvalo
+zdravie
+chorý
+zdravý
+choroba
+chorý
+
+2.Preložte: zdravie
+dukh
+nasvalo
+sastipen
+našti
+sastipen
+
+3.Preložte: te žužarel
+očkovať
+ošetriť
+porodiť
+vyliečiť
+ošetriť
+
+4.Preložte: nádcha
+trozna
+kleja
+lanďaripni
+o rudľi
+trozna
+
+5.Preložte: dukh
+liek
+tabletka
+kvapky
+bolesť
+bolesť
+
+6.Preložte: barla
+e paca
+koro
+patavo
+o skamind
+a paca
+
+7.Preložte: patavo
+lekárnička
+liek
+obväz
+náplasť
+obväz
+
+8.Preložte: teplomer
+phaglo
+teplomeris
+koro
+khabni
+teplomeris
+
+9.Preložte: zlomený
+trozna
+kašuko
+phaglo
+koro
+phaglo
+
+10.Preložte: Dukhal man oda
+Krvácam.
+Potrebujem pomoc.
+Potrebujem ošetriť
+Bolí ma to.
+Bolí ma to.

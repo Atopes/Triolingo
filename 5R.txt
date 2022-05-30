@@ -1,0 +1,69 @@
+1.Preložte: máro
+chlieb
+rožok
+mäso
+syr
+chlieb
+
+2.Preložte: páňi
+múka
+voda
+rožok
+maslo
+voda
+
+3.Preložte: múka
+čil
+áro
+mas
+purum
+áro
+
+4.Preložte: čil
+ryža
+maslo
+syr
+mlieko
+maslo
+
+5.Preložte: mäso
+ciral
+šajtos
+mas
+thut
+mas
+
+6.Preložte: thut
+syr
+mlieko
+cibuľa
+cesnak
+mlieko
+
+7.Preložte: jedlo
+pendech
+chaben
+bokeja
+šut
+chaben
+
+8.Preložte: roj
+hrniec
+lyžica	
+lyžička	
+nôž
+lyžica
+
+9.Preložte: nôž
+čhúri
+kučóri
+píry
+bokeja
+čhúri
+
+10.Preložte: šmakino
+polievka	
+neslaný	´
+palacinky
+chutný
+chutný
