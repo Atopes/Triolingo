@@ -4,8 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background2"
+    android:background="@drawable/splash_screen_1"
     tools:context=".ProfileActivity">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="370dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/screen_background_light" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toEndOf="@+id/editProfile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.683"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <TextView
         android:id="@+id/helloText"
@@ -13,7 +35,7 @@
         android:layout_height="41dp"
         android:text="Hello,"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/userName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,62 +43,80 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+
     <Button
         android:id="@+id/signOut"
         android:layout_width="126dp"
         android:layout_height="49dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="144dp"
         android:autoText="false"
-        android:backgroundTint="#FF9800"
+        android:backgroundTint="#FFAA00"
         android:text="logout"
-        android:textColor="#0B1032"
+        android:textColor="#1D1E23"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
-    <ImageView
-        android:id="@+id/profilePicMain"
-        android:layout_width="198dp"
-        android:layout_height="198dp"
-        android:layout_marginTop="16dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profPicView"
+        android:layout_width="155dp"
+        android:layout_height="155dp"
         android:onClick="editProfile"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="250dp"
+        app:layout_constraintBottom_toTopOf="@+id/editProfile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.782"
-        app:srcCompat="@drawable/user" />
+        app:layout_constraintTop_toBottomOf="@+id/userName"
+        app:layout_constraintVertical_bias="0.98">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="250dp">
+
+            <ImageView
+                android:id="@+id/profilePicMain"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:onClick="editProfile"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Languages"
-        android:textColor="@color/white"
+        android:textColor="#1D1E23"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/englishTest"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973" />
+        app:layout_constraintVertical_bias="0.99" />
 
     <ImageView
         android:id="@+id/englishTest"
         android:layout_width="67dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginBottom="96dp"
         android:onClick="engTestMenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/englishflag" />
 
@@ -85,14 +125,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Your score:"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.325" />
+        app:layout_constraintVertical_bias="0.348" />
 
     <TextView
         android:id="@+id/level"
@@ -100,14 +140,14 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="Your level:"
-        android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/score"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.994" />
 
     <TextView
         android:id="@+id/userName"
@@ -115,7 +155,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="#UserName"
-        android:textColor="#FFC107"
+        android:textColor="#FFAA00"
         android:textSize="48sp"
         app:layout_constraintBottom_toTopOf="@+id/level"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,12 +165,12 @@
         android:id="@+id/editProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginBottom="24dp"
         android:text="Click to edit your profile"
+        android:textColor="#1D1E23"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilePicMain"
-        app:layout_constraintVertical_bias="0.142" />
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

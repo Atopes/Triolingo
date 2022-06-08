@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -55,7 +56,7 @@ public class EditProfile extends AppCompatActivity {
     String storagepath = "Users_Profile_Cover_image/";
     String uid;
     ImageView profilePicEdit;
-    Button profilepic, editname, editpassword, back;
+    TextView profilepic, editname, editpassword, back;
     ProgressDialog pd;
     private static final int CAMERA_REQUEST = 100;
     private static final int STORAGE_REQUEST = 200;
@@ -71,7 +72,7 @@ public class EditProfile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
-        profilepic = findViewById(R.id.profilePicButton);
+        profilepic = findViewById(R.id.profilePicText);
         editname = findViewById(R.id.editName);
         profilePicEdit = findViewById(R.id.profilePicEdit);
         back = findViewById(R.id.backButton);
