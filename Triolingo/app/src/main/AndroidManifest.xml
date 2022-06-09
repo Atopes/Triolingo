@@ -26,6 +26,9 @@
             android:name=".TestsMenu"
             android:exported="false" />
         <activity
+            android:name=".TestsMenuRom"
+            android:exported="false" />
+        <activity
             android:name=".EnglishTestsActivity"
             android:exported="false" />
         <activity

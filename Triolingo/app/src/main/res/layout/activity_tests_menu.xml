@@ -136,7 +136,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest8"
+                android:onClick="startTest0"
                 android:text="Test 8"
                 android:textSize="25sp" />
 
@@ -148,7 +148,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest9"
+                android:onClick="startTest0"
                 android:text="Test 9"
                 android:textSize="25sp" />
 
@@ -160,7 +160,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest10"
+                android:onClick="startTest0"
                 android:text="Test 10"
                 android:textSize="25sp" />
 
@@ -172,7 +172,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest12"
+                android:onClick="startTest0"
                 android:text="Test 11"
                 android:textSize="25sp" />
 
@@ -184,7 +184,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest12"
+                android:onClick="startTest0"
                 android:text="Test 12"
                 android:textSize="25sp" />
 
@@ -196,7 +196,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest13"
+                android:onClick="startTest0"
                 android:text="Test 13"
                 android:textSize="25sp" />
 
@@ -208,7 +208,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest14"
+                android:onClick="startTest0"
                 android:text="Test 14"
                 android:textSize="25sp" />
 
@@ -220,7 +220,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest15"
+                android:onClick="startTest0"
                 android:text="Test 15"
                 android:textSize="25sp" />
 
@@ -232,7 +232,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest16"
+                android:onClick="startTest0"
                 android:text="Test 16"
                 android:textSize="25sp" />
 
@@ -244,7 +244,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest17"
+                android:onClick="startTest0"
                 android:text="Test 17"
                 android:textSize="25sp" />
 
@@ -256,7 +256,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest18"
+                android:onClick="startTest0"
                 android:text="Test 18"
                 android:textSize="25sp" />
 
@@ -268,7 +268,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest19"
+                android:onClick="startTest0"
                 android:text="Test 19"
                 android:textSize="25sp" />
 
@@ -280,7 +280,7 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
                 android:backgroundTint="#000000"
-                android:onClick="startTest20"
+                android:onClick="startTest0"
                 android:text="Test 20"
                 android:textSize="25sp" />
 
