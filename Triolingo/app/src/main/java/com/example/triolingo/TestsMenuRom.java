@@ -25,8 +25,13 @@ public class TestsMenuRom extends AppCompatActivity {
         setContentView(R.layout.activity_tests_menu_rom);
     }
 
+    public void lockTest(Button b, int idTestu) {
+        if (ProfileActivity.score < scoreToNextTest * idTestu){
+            b.getBackground().setAlpha(64);
+        }
+    }
+
     public void startTest0Rom(View view) {
-        Button b =(Button) view;
         String nazov= ((Button) view).getText().toString();
         for (int i=0;i<testNamesRom.length;i++){
             if (nazov.equals(testNamesRom[i])){

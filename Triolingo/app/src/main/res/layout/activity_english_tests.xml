@@ -4,89 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background2"
+    android:background="@drawable/splash_screen_1"
     tools:context=".EnglishTestsActivity">
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="370dp"
+        android:layout_height="320dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72"
+        app:srcCompat="@android:drawable/screen_background_light" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="360dp"
-        android:layout_height="200dp"
+        android:layout_width="334dp"
+        android:layout_height="195dp"
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.657">
+        app:layout_constraintVertical_bias="0.74">
 
         <RadioButton
             android:id="@+id/option1"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:buttonTint="#938383"
+            android:buttonTint="#1D1E23"
             android:onClick="onRadioButtonClicked"
-            android:shadowColor="#3F51B5"
+            android:shadowColor="#1D1E23"
             android:text="Koľko máš rokov?"
-            android:textColor="#000000" />
+            android:textColor="#1D1E23" />
 
         <RadioButton
             android:id="@+id/option2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:buttonTint="#938383"
+            android:buttonTint="#1D1E23"
             android:onClick="onRadioButtonClicked"
             android:text="Ako sa máš?"
-            android:textColor="#0C0B0B" />
+            android:textColor="#1D1E23" />
 
         <RadioButton
             android:id="@+id/option3"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:buttonTint="#938383"
+            android:buttonTint="#1D1E23"
             android:onClick="onRadioButtonClicked"
             android:text="Odkiaľ si?"
-            android:textColor="#151313" />
+            android:textColor="#1D1E23" />
 
         <RadioButton
             android:id="@+id/option4"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:buttonTint="#938383"
+            android:buttonTint="#1D1E23"
             android:onClick="onRadioButtonClicked"
             android:text="Koľko je hodín?"
-            android:textColor="#100C0C"
-            android:textColorHint="#000000" />
+            android:textColor="#1D1E23"
+            android:textColorHint="#1D1E23" />
 
     </RadioGroup>
 
     <Button
         android:id="@+id/buttonNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
+        android:layout_width="370dp"
+        android:layout_height="58dp"
         android:layout_marginBottom="16dp"
-        android:background="#4B4B65"
-        android:backgroundTint="#4B4B65"
+        android:backgroundTint="#FFAA00"
         android:onClick="onNext"
-        android:text="Next"
+        android:text="NEXT"
+        android:textColor="#1D1E23"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="16dp"
-        android:background="#4B4B65"
-        android:backgroundTint="#4B4B65"
-        android:onClick="onPrevious"
-        android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.9" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -103,7 +101,7 @@
         android:layout_width="185dp"
         android:layout_height="171dp"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/glassestrio" />
@@ -116,10 +114,26 @@
         android:layout_marginBottom="52dp"
         android:text="How are you?"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#1D1E23"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="@+id/imageView7" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="219dp"
+        android:layout_height="94dp"
+        android:gravity="center"
+        android:text="CHOOSE THE RIGHT ANSWER..."
+        android:textColor="#1D1E23"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.817"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

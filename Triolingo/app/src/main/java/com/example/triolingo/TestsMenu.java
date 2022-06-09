@@ -54,31 +54,57 @@ public class TestsMenu extends AppCompatActivity {
 
 
         test0.setText(testNames[0]);
+        lockTest(test0, 0);
         test1.setText(testNames[1]);
+        lockTest(test1, 1);
         test2.setText(testNames[2]);
+        lockTest(test2, 2);
         test3.setText(testNames[3]);
+        lockTest(test3, 3);
         test4.setText(testNames[4]);
+        lockTest(test4, 4);
         test5.setText(testNames[5]);
+        lockTest(test5, 5);
         test6.setText(testNames[6]);
+        lockTest(test6, 6);
         test7.setText(testNames[7]);
+        lockTest(test7, 7);
         test8.setText(testNames[8]);
+        lockTest(test8, 8);
         test9.setText(testNames[9]);
+        lockTest(test9, 9);
         test10.setText(testNames[10]);
+        lockTest(test10, 10);
         test11.setText(testNames[11]);
+        lockTest(test11, 11);
         test12.setText(testNames[12]);
+        lockTest(test12, 12);
         test13.setText(testNames[13]);
+        lockTest(test13, 13);
         test14.setText(testNames[14]);
+        lockTest(test14, 14);
         test15.setText(testNames[15]);
+        lockTest(test15, 15);
         test16.setText(testNames[16]);
+        lockTest(test16, 16);
         test17.setText(testNames[17]);
+        lockTest(test17, 17);
         test18.setText(testNames[18]);
+        lockTest(test18, 18);
         test19.setText(testNames[19]);
+        lockTest(test19, 19);
         test20.setText(testNames[20]);
+        lockTest(test20, 20);
     }
 
-    public void startTest0(View view) {
-        Button b =(Button) view;
-        String nazov= ((Button) view).getText().toString();
+    public void lockTest(Button b, int idTestu) {
+        if (ProfileActivity.score < scoreToNextTest * idTestu){
+            b.getBackground().setAlpha(64);
+        }
+    }
+
+    public void startTest(View view) {
+        String nazov = ((Button) view).getText().toString();
         for (int i=0;i<testNames.length;i++){
             if (nazov.equals(testNames[i])){
                 id=i;
@@ -86,7 +112,7 @@ public class TestsMenu extends AppCompatActivity {
                 break;
             }
         }
-        if (ProfileActivity.score >=scoreToNextTest*id){
+        if (ProfileActivity.score >= scoreToNextTest*id){
             loadTest(id);
             startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
         }else{
