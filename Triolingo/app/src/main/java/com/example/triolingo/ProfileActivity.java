@@ -31,7 +31,6 @@ public class ProfileActivity extends AppCompatActivity {
     private String userID;
     private Button logOut;
     public static int score = 0, level = 1;
-    public static String fullName;
     private TextView levelTxt, scoreTxt;
     private ImageView profilePicMain;
 
@@ -103,7 +102,7 @@ public class ProfileActivity extends AppCompatActivity {
                 if (userProfile != null) {
                     score = userProfile.score;
 
-                    fullName = userProfile.name;
+                    String fullName = userProfile.name;
                     String[] editFullName = fullName.split(" ");
                     String firstName = editFullName[0];
 
@@ -143,9 +142,7 @@ public class ProfileActivity extends AppCompatActivity {
     public void engTestMenu(View view) {
         startActivity(new Intent(ProfileActivity.this, TestsMenu.class));
     }
-    public void Rankings(View view) {
-        startActivity(new Intent(ProfileActivity.this, Ladder.class));
-    }
+
     public void editProfile(View view) {
         startActivity(new Intent(ProfileActivity.this, EditProfile.class));
     }

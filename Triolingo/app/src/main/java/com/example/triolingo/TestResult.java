@@ -8,19 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.LinkedList;
 import java.util.Objects;
-import java.util.Random;
 
 public class TestResult extends AppCompatActivity {
     private TextView result1,result2,result3,result4,result5,result6,result7,result8,result9,result10;
     private TextView[] res=new TextView[10];
-    private TextView testName,score,performance,motivationalQuote;
+    private TextView testName,score,performance;
     private int scoreInt=0;
-    private String[] quotes= new String[]{"Live as if you were to die tomorrow. Learn as if you were to live forever.","Wisdom is not a product of schooling but of the lifelong attempt to acquire it.",
-    "The beautiful thing about learning is nobody can take it away from you.","You don’t learn to walk by following rules. You learn by doing, and by falling over.",
-    "A man who asks is a fool for five minutes. A man who never asks is a fool for life.","A moment’s insight is sometimes worth a life’s experience.",
-    "The expert in anything was once a beginner himself.","Never stop learning,because life never stops teaching.","Believe you can and you are halfway there."
-    ,"A little progress each day adds up to a big results"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,19 +27,16 @@ public class TestResult extends AppCompatActivity {
         result3 =(TextView) findViewById(R.id.result3);
         result4 =(TextView) findViewById(R.id.result4);
         result5 =(TextView) findViewById(R.id.result5);
-        result6 =(TextView) findViewById(R.id.Lscore);
+        result6 =(TextView) findViewById(R.id.result6);
         result7 =(TextView) findViewById(R.id.result7);
         result8 =(TextView) findViewById(R.id.result8);
         result9 =(TextView) findViewById(R.id.result9);
         result10 =(TextView) findViewById(R.id.result10);
 
-        testName =(TextView) findViewById(R.id.ranking);
+        testName =(TextView) findViewById(R.id.testName);
         score=(TextView) findViewById(R.id.testScore);
         performance =(TextView) findViewById(R.id.performance);
-        motivationalQuote=(TextView) findViewById(R.id.motivation);
-        Random rd = new Random();
 
-        motivationalQuote.setText(quotes[rd.nextInt(quotes.length)]);
         res[0] = result1;
         res[1] = result2;
         res[2] = result3;

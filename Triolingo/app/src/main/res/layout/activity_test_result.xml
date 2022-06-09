@@ -7,7 +7,7 @@
     tools:context=".TestResult">
 
     <TextView
-        android:id="@+id/ranking"
+        android:id="@+id/testName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -62,7 +62,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/LadderRank"
+                android:id="@+id/TestN0"
                 android:layout_width="67dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
@@ -71,7 +71,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/LadderLevel"
+                android:id="@+id/CorrectAnswer0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -81,7 +81,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/LadderName"
+                android:id="@+id/YourAnswer0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
@@ -91,7 +91,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/LadderScore"
+                android:id="@+id/Result0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -106,7 +106,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/Lrank"
+                android:id="@+id/testN"
                 android:layout_width="67dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
@@ -125,7 +125,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/Lname"
+                android:id="@+id/yourAnswer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
@@ -134,7 +134,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/Lscore"
+                android:id="@+id/result6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -328,7 +328,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ranking"
+        app:layout_constraintTop_toBottomOf="@+id/testName"
         app:srcCompat="@drawable/glassestrio" />
 
     <TextView
@@ -337,12 +337,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
         android:text="Motivational Quote"
-        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/performance"
-        app:layout_constraintVertical_bias="0.834" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
