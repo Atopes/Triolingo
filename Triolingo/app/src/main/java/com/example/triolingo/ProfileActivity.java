@@ -78,14 +78,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+                startActivity(new Intent(ProfileActivity.this, LogInActivity.class));
                 finish();
             }
         });
         englishTest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ProfileActivity.this, TestsMenu.class));
+                startActivity(new Intent(ProfileActivity.this, TestsMenuEng.class));
             }
         });
 
@@ -112,7 +112,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ProfileActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
+                Toast.makeText(ProfileActivity.this, "Nastala chyba!", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -130,24 +130,24 @@ public class ProfileActivity extends AppCompatActivity {
 
                     databaseReference.child(userID).child("score").setValue(score);
 
-                    scoreTxt.setText("Your score: " + String.valueOf(score));
-                    levelTxt.setText("Your level: " + String.valueOf(1 + (score/100)));
+                    scoreTxt.setText("Skóre: " + String.valueOf(score));
+                    levelTxt.setText("Level: " + String.valueOf(1 + (score/100)));
                 }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ProfileActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
+                Toast.makeText(ProfileActivity.this, "Nastala chyba!", Toast.LENGTH_LONG).show();
             }
         });
     }
     public void engTestMenu(View view) {
-        startActivity(new Intent(ProfileActivity.this, TestsMenu.class));
+        startActivity(new Intent(ProfileActivity.this, TestsMenuEng.class));
     }
     public void romTestMenu(View view) {
         startActivity(new Intent(ProfileActivity.this, TestsMenuRom.class));
     }
     public void specialTestMenu(View view){
-        startActivity(new Intent(ProfileActivity.this, TestsMenu.class));
+        startActivity(new Intent(ProfileActivity.this, TestsMenuEng.class));
     }
     public void Ranking(View view) {
         startActivity(new Intent(ProfileActivity.this, Ladder.class));

@@ -55,7 +55,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.banner:
-                startActivity(new Intent(this,MainActivity.class));
+                startActivity(new Intent(this, LogInActivity.class));
                 break;
             case R.id.registerUser:
                 registerUser();
@@ -70,32 +70,32 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         String gender = editTextGender.getText().toString().trim();
 
         if (fullName.isEmpty()){
-            editTextFullName.setError("Full name is required!");
+            editTextFullName.setError("Celé meno je povinné pole!");
             editTextFullName.requestFocus();
             return;
         }
         if (gender.isEmpty()){
-            editTextGender.setError("Gender is required!");
+            editTextGender.setError("Pohlavie je povinné pole!");
             editTextGender.requestFocus();
             return;
         }
         if (email.isEmpty()){
-            editTextEmail.setError("Email is required!");
+            editTextEmail.setError("E-mail je povinné pole!");
             editTextEmail.requestFocus();
             return;
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editTextEmail.setError("Please provide valid email!");
+            editTextEmail.setError("Prosím zadajte platný e-mail!");
             editTextEmail.requestFocus();
             return;
         }
         if (password.isEmpty()){
-            editTextPassword.setError("Password is required!");
+            editTextPassword.setError("Heslo je povinné pole!");
             editTextPassword.requestFocus();
             return;
         }
         if (password.length() < 6){
-            editTextPassword.setError("Minimal length should be 6 characters!");
+            editTextPassword.setError("Minimálna dĺžka hesla by mala byť aspoň 6 znakov!");
             editTextPassword.requestFocus();
             return;
         }
@@ -114,17 +114,17 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
-                                        Toast.makeText(RegisterUser.this,"User has been registered successfully!",Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RegisterUser.this,"Užívateľ bol úspešne zaregistrovaný!",Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
                                     else {
-                                        Toast.makeText(RegisterUser.this, "Failed to register!1 Try again!",Toast.LENGTH_LONG).show();
+                                        Toast.makeText(RegisterUser.this, "Registrácia zlyhala! Skúste to znova!",Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
                                 }
                             });
                         }else {
-                            Toast.makeText(RegisterUser.this, "Failed to register!2 Try again!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(RegisterUser.this, "Registrácia zlyhala! Skúste to znova!", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splash_screen_1"
-    tools:context=".MainActivity">
+    tools:context=".LogInActivity">
 
 
     <ImageView
@@ -14,9 +14,10 @@
         android:layout_height="387dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.78"
+        app:layout_constraintVertical_bias="0.74"
         app:srcCompat="@android:drawable/screen_background_light" />
 
     <Button
@@ -25,7 +26,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="24dp"
         android:backgroundTint="#FFAA00"
-        android:text="Login"
+        android:text="Prihlásiť sa"
         android:textColor="#1D1E23"
         android:textColorHighlight="@color/purple_200"
         android:textColorLink="#E91E63"
@@ -33,17 +34,18 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.065" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SIGN IN"
+        android:text="PRIHLASOVANIE"
         android:textColor="#1D1E23"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -61,7 +63,7 @@
         android:layout_marginTop="72dp"
         android:backgroundTint="#1D1E23"
         android:ems="10"
-        android:hint="E-mail address"
+        android:hint="E-mailová adresa"
         android:inputType="text"
         android:textColor="#1D1E23"
         android:textColorHint="#1D1E23"
@@ -79,7 +81,7 @@
         android:layout_marginTop="16dp"
         android:backgroundTint="#1D1E23"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Heslo"
         android:inputType="textPassword"
         android:textColor="#1D1E23"
         android:textColorHint="#1D1E23"
@@ -97,7 +99,7 @@
         android:layout_marginLeft="56dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/white"
-        android:text="Forgot password?"
+        android:text="Zabudnuté heslo?"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -111,8 +113,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
-        android:layout_marginEnd="68dp"
-        android:text="Register"
+        android:layout_marginEnd="56dp"
+        android:text="Zaregistrovať sa"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -138,7 +140,7 @@
         android:id="@+id/imageView2"
         android:layout_width="247dp"
         android:layout_height="191dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

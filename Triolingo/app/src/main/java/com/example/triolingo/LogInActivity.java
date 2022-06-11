@@ -5,7 +5,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -20,9 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.regex.Pattern;
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class LogInActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView register, forgotPassword;
     private EditText editTextEmail, editTextPassword;
     private Button signIn;
@@ -33,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_log_in);
 
         register = (TextView) findViewById(R.id.register);
         register.setOnClickListener(this);
@@ -72,22 +69,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String password = editTextPassword.getText().toString().trim();
 
         if (email.isEmpty()){
-            editTextEmail.setError("Email is required!");
+            editTextEmail.setError("E-mail je povinné pole!");
             editTextEmail.requestFocus();
             return;
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            editTextEmail.setError("Please enter a valid email!");
+            editTextEmail.setError("Prosím zadajte platný e-mail!");
             editTextEmail.requestFocus();
             return;
         }
         if (password.isEmpty()){
-            editTextPassword.setError("Password is required!");
+            editTextPassword.setError("Heslo je povinné pole!");
             editTextPassword.requestFocus();
             return;
         }
         if (password.length() < 6){
-            editTextPassword.setError("Min. password length is 6 characters!");
+            editTextPassword.setError("Minimálna dĺžka hesla je 6 znakov!");
             editTextPassword.requestFocus();
             return;
         }
@@ -100,16 +97,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     if (user.isEmailVerified()) {
                         progressBar.setVisibility(View.GONE);
-                        startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                        startActivity(new Intent(LogInActivity.this, ProfileActivity.class));
                     } else {
                         progressBar.setVisibility(View.GONE);
                         user.sendEmailVerification();
-                        Toast.makeText(MainActivity.this, "Check your email to verify your account!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(LogInActivity.this, "Pozrite si mail na overenie Vášho účtu!", Toast.LENGTH_LONG).show();
                     }
                 }
                 else {
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(MainActivity.this, "Failed to login! Please check your credentials!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LogInActivity.this, "Nepodarilo sa prihlásiť! Prosím skontrolujte si údaje!", Toast.LENGTH_LONG).show();
                 }}
         });
     }

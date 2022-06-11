@@ -10,26 +10,25 @@
 
     <ImageView
         android:id="@+id/imageView9"
-        android:layout_width="383dp"
+        android:layout_width="370dp"
         android:layout_height="378dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.767"
+        app:layout_constraintVertical_bias="0.73"
         app:srcCompat="@android:drawable/screen_background_light" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="155dp"
         android:layout_height="155dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="144dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="250dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
             android:layout_width="150dp"
@@ -50,50 +49,51 @@
 
     <TextView
         android:id="@+id/changePassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
-        android:text="Change Password                    >"
+        android:layout_width="345dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="132dp"
+        android:text="Zmena Hesla                             >"
         android:textColor="#FFAA00"
-        android:textSize="25sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/profilePicText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Profile Picture             >"
+        android:text="Zmena Profilového Obrázka  >"
         android:textColor="#FFAA00"
-        android:textSize="25sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.296" />
+        app:layout_constraintVertical_bias="0.312" />
 
     <TextView
         android:id="@+id/editName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Username                    >"
+        android:text="Zmena Užívateľského Mena  >"
         android:textColor="#FFAA00"
-        android:textSize="25sp"
+        android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/changePassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profilePicText"
-        app:layout_constraintVertical_bias="0.51" />
+        app:layout_constraintVertical_bias="0.509" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="Your Profile"
+        android:layout_marginTop="44dp"
+        android:text="Profil"
         android:textColor="#FFAA00"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,31 +102,31 @@
 
     <Button
         android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="370dp"
+        android:layout_height="58dp"
         android:backgroundTint="#FFAA00"
-        android:text="BACK"
-        android:textColor="#000000"
-        android:textSize="16sp"
+        android:text="Späť"
+        android:textColor="#1D1E23"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.97" />
 
     <TextView
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WHAT CAN YOU DO..."
+        android:text="ČO MÔŽEM ZMENIŤ..."
         android:textColor="#1D1E23"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
+        app:layout_constraintVertical_bias="0.499" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

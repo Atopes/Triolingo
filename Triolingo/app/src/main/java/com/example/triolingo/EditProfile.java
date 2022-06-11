@@ -113,7 +113,7 @@ public class EditProfile extends AppCompatActivity {
         editpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pd.setMessage("Changing Password");
+                pd.setMessage("Mením Heslo...");
                 showPasswordChangeDailog();
             }
         });
@@ -121,7 +121,7 @@ public class EditProfile extends AppCompatActivity {
         profilepic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pd.setMessage("Updating Profile Picture");
+                pd.setMessage("Aktualizujem Profilový Obrázok...");
                 profileOrCoverPhoto = "image";
                 showImagePicDialog();
             }
@@ -130,7 +130,7 @@ public class EditProfile extends AppCompatActivity {
         editname.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pd.setMessage("Updating Name");
+                pd.setMessage("Aktualizujem Meno...");
                 showNamephoneupdate("name");
             }
         });
@@ -171,7 +171,7 @@ public class EditProfile extends AppCompatActivity {
         editpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pd.setMessage("Changing Password");
+                pd.setMessage("Mením Heslo...");
                 showPasswordChangeDailog();
             }
         });
@@ -204,7 +204,7 @@ public class EditProfile extends AppCompatActivity {
         editpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pd.setMessage("Changing Password");
+                pd.setMessage("Mením Heslo...");
                 showPasswordChangeDailog();
             }
         });
@@ -248,11 +248,11 @@ public class EditProfile extends AppCompatActivity {
                 String oldp = oldpass.getText().toString().trim();
                 String newp = newpass.getText().toString().trim();
                 if (TextUtils.isEmpty(oldp)) {
-                    Toast.makeText(EditProfile.this, "Current Password cant be empty", Toast.LENGTH_LONG).show();
+                    Toast.makeText(EditProfile.this, "Aktuálne Heslo nemôže byť prázdne", Toast.LENGTH_LONG).show();
                     return;
                 }
                 if (TextUtils.isEmpty(newp)) {
-                    Toast.makeText(EditProfile.this, "New Password cant be empty", Toast.LENGTH_LONG).show();
+                    Toast.makeText(EditProfile.this, "Nové Heslo nemôže byť prázdne", Toast.LENGTH_LONG).show();
                     return;
                 }
                 dialog.dismiss();
@@ -276,13 +276,13 @@ public class EditProfile extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         pd.dismiss();
-                                        Toast.makeText(EditProfile.this, "Changed Password", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(EditProfile.this, "Heslo bolo zmenené", Toast.LENGTH_LONG).show();
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {
                                     @Override
                                     public void onFailure(@NonNull Exception e) {
                                         pd.dismiss();
-                                        Toast.makeText(EditProfile.this, "Failed", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(EditProfile.this, "Zlyhanie", Toast.LENGTH_LONG).show();
                                     }
                                 });
                     }
@@ -290,7 +290,7 @@ public class EditProfile extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         pd.dismiss();
-                        Toast.makeText(EditProfile.this, "Failed", Toast.LENGTH_LONG).show();
+                        Toast.makeText(EditProfile.this, "Zlyhanie", Toast.LENGTH_LONG).show();
                     }
                 });
     }
@@ -298,18 +298,18 @@ public class EditProfile extends AppCompatActivity {
     // Updating name
     private void showNamephoneupdate(final String key) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Update" + key);
+        builder.setTitle("Aktualizácia mena");
 
         // creating a layout to write the new name
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setPadding(10, 10, 10, 10);
         final EditText editText = new EditText(this);
-        editText.setHint("Enter" + key);
+        editText.setHint(" Zadajte nové meno");
         layout.addView(editText);
         builder.setView(layout);
 
-        builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Aktualizovať", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 final String value = editText.getText().toString().trim();
@@ -325,13 +325,13 @@ public class EditProfile extends AppCompatActivity {
                             pd.dismiss();
 
                             // after updated we will show updated
-                            Toast.makeText(EditProfile.this, " updated ", Toast.LENGTH_LONG).show();
+                            Toast.makeText(EditProfile.this, "Úspešne aktualizované", Toast.LENGTH_LONG).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             pd.dismiss();
-                            Toast.makeText(EditProfile.this, "Unable to update", Toast.LENGTH_LONG).show();
+                            Toast.makeText(EditProfile.this, "Nepodarilo sa aktualizovať", Toast.LENGTH_LONG).show();
                         }
                     });
                     if (key.equals("name")) {
@@ -353,12 +353,12 @@ public class EditProfile extends AppCompatActivity {
                         });
                     }
                 } else {
-                    Toast.makeText(EditProfile.this, "Unable to update", Toast.LENGTH_LONG).show();
+                    Toast.makeText(EditProfile.this, "Nepodarilo sa aktualizovať", Toast.LENGTH_LONG).show();
                 }
             }
         });
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Zrušiť", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 pd.dismiss();
@@ -370,9 +370,9 @@ public class EditProfile extends AppCompatActivity {
     // Here we are showing image pic dialog where we will select
     // and image either from camera or gallery
     private void showImagePicDialog() {
-        String options[] = {"Camera", "Gallery"};
+        String options[] = {"Kamera", "Galéria"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Pick Image From");
+        builder.setTitle("Zdroj obrázka");
         builder.setItems(options, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -420,7 +420,7 @@ public class EditProfile extends AppCompatActivity {
                     if (camera_accepted && writeStorageaccepted) {
                         pickFromCamera();
                     } else {
-                        Toast.makeText(this, "Please Enable Camera and Storage Permissions", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Prosím, zapnite povolenia pre kameru a úložisko", Toast.LENGTH_LONG).show();
                     }
                 }
             }
@@ -431,7 +431,7 @@ public class EditProfile extends AppCompatActivity {
                     if (writeStorageaccepted) {
                         pickFromGallery();
                     } else {
-                        Toast.makeText(this, "Please Enable Storage Permissions", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Prosím, zapnite povolenia pre úložisko", Toast.LENGTH_LONG).show();
                     }
                 }
             }
@@ -481,25 +481,25 @@ public class EditProfile extends AppCompatActivity {
                         @Override
                         public void onSuccess(Void aVoid) {
                             pd.dismiss();
-                            Toast.makeText(EditProfile.this, "Updated", Toast.LENGTH_LONG).show();
+                            Toast.makeText(EditProfile.this, "Aktualizované", Toast.LENGTH_LONG).show();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             pd.dismiss();
-                            Toast.makeText(EditProfile.this, "Error Updating ", Toast.LENGTH_LONG).show();
+                            Toast.makeText(EditProfile.this, "Chyba Aktualizácie ", Toast.LENGTH_LONG).show();
                         }
                     });
                 } else {
                     pd.dismiss();
-                    Toast.makeText(EditProfile.this, "Error", Toast.LENGTH_LONG).show();
+                    Toast.makeText(EditProfile.this, "Chyba", Toast.LENGTH_LONG).show();
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 pd.dismiss();
-                Toast.makeText(EditProfile.this, "Error", Toast.LENGTH_LONG).show();
+                Toast.makeText(EditProfile.this, "Chyba", Toast.LENGTH_LONG).show();
             }
         });
     }

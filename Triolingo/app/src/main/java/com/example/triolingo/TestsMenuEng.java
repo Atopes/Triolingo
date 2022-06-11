@@ -14,22 +14,23 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.LinkedList;
 
-public class TestsMenu extends AppCompatActivity {
-    public static LinkedList<String> correctAnswers=new LinkedList<String>();
-    public static LinkedList<String> questions=new LinkedList<String>();
-    public static LinkedList<String> definedAnswers1=new LinkedList<String>();
-    public static LinkedList<String> definedAnswers2=new LinkedList<String>();
-    public static LinkedList<String> definedAnswers3=new LinkedList<String>();
-    public static LinkedList<String> definedAnswers4=new LinkedList<String>();
+public class TestsMenuEng extends AppCompatActivity {
+    public static LinkedList<String> correctAnswers = new LinkedList<String>();
+    public static LinkedList<String> questions = new LinkedList<String>();
+    public static LinkedList<String> definedAnswers1 = new LinkedList<String>();
+    public static LinkedList<String> definedAnswers2 = new LinkedList<String>();
+    public static LinkedList<String> definedAnswers3 = new LinkedList<String>();
+    public static LinkedList<String> definedAnswers4 = new LinkedList<String>();
 
-    public static final String[] testNames=new String[]{"Úvodný test","Frázy","Predložky","Vety","Zámená 1","Zámená 2", "Zámená 3","Časti tela","Pritomný a priebehový čas","Veľa,mnoho,veľmi" ,"Členy", "Modálne slovesá" , "Say, Tell, Speak, Talk" , "Vzťažné zámená" ,"Past tenses","Present Perfect 1", "Present Perfect 2","Used to","Present Perfect/Past","Pre-Intermediate test 1", "Pre-Intermediate test 2"};
+    public static final String[] testNames = new String[]{"Úvodný test","Frázy","Predložky","Vety","Zámená 1","Zámená 2", "Zámená 3","Časti tela","Pritomný a priebehový čas","Veľa,mnoho,veľmi" ,"Členy", "Modálne slovesá" , "Say, Tell, Speak, Talk" , "Vzťažné zámená" ,"Past tenses","Present Perfect 1", "Present Perfect 2","Used to","Present Perfect/Past","Pre-Intermediate test 1", "Pre-Intermediate test 2"};
     private Button test0,test1,test2,test3,test4,test5,test6,test7,test8,test9,test10,test11,test12,test13,test14,test15,test16,test17,test18,test19,test20;
-    private int internalCounter=0,scoreToNextTest=30,id;
+    private int internalCounter = 0,scoreToNextTest = 30,id;
     public static int testID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tests_menu);
+        setContentView(R.layout.activity_tests_menu_eng);
+
         test0 = (Button) findViewById(R.id.test0);
         test1 = (Button) findViewById(R.id.test1);
         test2 = (Button) findViewById(R.id.test2);
@@ -105,23 +106,23 @@ public class TestsMenu extends AppCompatActivity {
 
     public void startTest(View view) {
         String nazov = ((Button) view).getText().toString();
-        for (int i=0;i<testNames.length;i++){
+        for (int i = 0; i < testNames.length; i++){
             if (nazov.equals(testNames[i])){
-                id=i;
-                testID=i;
+                id = i;
+                testID = i;
                 break;
             }
         }
-        if (ProfileActivity.score >= scoreToNextTest*id){
+        if (ProfileActivity.score >= scoreToNextTest * id) {
             loadTest(id);
-            startActivity(new Intent(TestsMenu.this, EnglishTestsActivity.class));
-        }else{
-            Toast.makeText(getApplicationContext(), "For this test you need at least " +scoreToNextTest*id +" score.", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(TestsMenuEng.this, EnglishTestsActivity.class));
+        }else {
+            Toast.makeText(getApplicationContext(), "Na odomknutie tohto testu potrebujete aspoň " + scoreToNextTest * id +" skóre.", Toast.LENGTH_SHORT).show();
         }
     }
 
     public void back(View view) {
-        startActivity(new Intent(TestsMenu.this, ProfileActivity.class));
+        startActivity(new Intent(TestsMenuEng.this, ProfileActivity.class));
     }
 
     public void loadTest(int id){
@@ -131,27 +132,27 @@ public class TestsMenu extends AppCompatActivity {
         definedAnswers2.clear();
         definedAnswers3.clear();
         definedAnswers4.clear();
-        internalCounter=0;
-        String filename = ""+id;
+        internalCounter = 0;
+        String filename = ""+ id;
         BufferedReader reader;
         try{
             final InputStream file = getAssets().open(filename);
             reader = new BufferedReader(new InputStreamReader(file));
             String strLine = reader.readLine();
-            while(strLine != null){
-                 if(internalCounter==0) {
+            while(strLine != null) {
+                 if(internalCounter == 0) {
                     questions.add(strLine.trim());
                     internalCounter++;
-                }else if(internalCounter==5){
+                }else if(internalCounter == 5){
                     correctAnswers.add(strLine.trim());
-                    internalCounter=0;
-                }else if(internalCounter==1) {
+                    internalCounter = 0;
+                }else if(internalCounter == 1) {
                     definedAnswers1.add(strLine.trim());
                     internalCounter++;
-                }else if(internalCounter==2) {
+                }else if(internalCounter == 2) {
                     definedAnswers2.add(strLine.trim());
                     internalCounter++;
-                }else if(internalCounter==3) {
+                }else if(internalCounter == 3) {
                     definedAnswers3.add(strLine.trim());
                     internalCounter++;
                 }else{
@@ -162,7 +163,7 @@ public class TestsMenu extends AppCompatActivity {
             }
             file.close();
             reader.close();
-        } catch(IOException ioe){
+        } catch(IOException ioe) {
             ioe.printStackTrace();
         }
     }

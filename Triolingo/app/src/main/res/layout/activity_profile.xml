@@ -26,14 +26,14 @@
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toEndOf="@+id/editProfile"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673"
+        app:layout_constraintVertical_bias="0.663"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <TextView
         android:id="@+id/helloText"
         android:layout_width="182dp"
         android:layout_height="41dp"
-        android:text="Hello,"
+        android:text="Vitajte,"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="34sp"
@@ -46,12 +46,12 @@
 
     <Button
         android:id="@+id/signOut"
-        android:layout_width="126dp"
+        android:layout_width="140dp"
         android:layout_height="54dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="32dp"
         android:autoText="false"
         android:backgroundTint="#FFAA00"
-        android:text="logout"
+        android:text="Odhlásiť sa"
         android:textColor="#1D1E23"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,7 +66,7 @@
         android:id="@+id/signOut3"
         android:layout_width="126dp"
         android:layout_height="54dp"
-        android:layout_marginEnd="268dp"
+        android:layout_marginEnd="256dp"
         android:autoText="false"
         android:backgroundTint="#FFAA00"
         android:onClick="Ranking"
@@ -75,9 +75,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
 
@@ -116,7 +114,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Languages"
+        android:text="Jazyky"
         android:textColor="#1D1E23"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -167,7 +165,7 @@
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your score:"
+        android:text="Skóre:"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -182,7 +180,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="Your level:"
+        android:text="Level:"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/score"
@@ -209,11 +207,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="Click to edit your profile"
+        android:text="Úprava profilu"
         android:textColor="#1D1E23"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

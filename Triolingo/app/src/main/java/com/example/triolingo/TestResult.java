@@ -19,7 +19,7 @@ public class TestResult extends AppCompatActivity {
     private String[] quotes= new String[]{"Live as if you were to die tomorrow. Learn as if you were to live forever.","Wisdom is not a product of schooling but of the lifelong attempt to acquire it.",
             "The beautiful thing about learning is nobody can take it away from you.","You don’t learn to walk by following rules. You learn by doing, and by falling over.",
             "A man who asks is a fool for five minutes. A man who never asks is a fool for life.","A moment’s insight is sometimes worth a life’s experience.",
-            "The expert in anything was once a beginner himself.","Never stop learning,because life never stops teaching.","Believe you can and you are halfway there."
+            "The expert in anything was once a beginner himself.","Never stop learning, because life never stops teaching.","Believe you can and you are halfway there."
             ,"A little progress each day adds up to a big results"};
 
     @Override
@@ -27,19 +27,19 @@ public class TestResult extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_result);
 
-        result1 =(TextView) findViewById(R.id.result1);
-        result2 =(TextView) findViewById(R.id.result2);
-        result3 =(TextView) findViewById(R.id.result3);
-        result4 =(TextView) findViewById(R.id.result4);
-        result5 =(TextView) findViewById(R.id.result5);
-        result6 =(TextView) findViewById(R.id.result6);
-        result7 =(TextView) findViewById(R.id.result7);
-        result8 =(TextView) findViewById(R.id.result8);
-        result9 =(TextView) findViewById(R.id.result9);
-        result10 =(TextView) findViewById(R.id.result10);
+        result1 = (TextView) findViewById(R.id.result1);
+        result2 = (TextView) findViewById(R.id.result2);
+        result3 = (TextView) findViewById(R.id.result3);
+        result4 = (TextView) findViewById(R.id.result4);
+        result5 = (TextView) findViewById(R.id.result5);
+        result6 = (TextView) findViewById(R.id.result6);
+        result7 = (TextView) findViewById(R.id.result7);
+        result8 = (TextView) findViewById(R.id.result8);
+        result9 = (TextView) findViewById(R.id.result9);
+        result10 = (TextView) findViewById(R.id.result10);
 
-        testName =(TextView) findViewById(R.id.ranking);
-        score=(TextView) findViewById(R.id.testScore);
+        testName = (TextView) findViewById(R.id.testName);
+        score = (TextView) findViewById(R.id.testScore);
         performance =(TextView) findViewById(R.id.performance);
         motivationalQuote=(TextView) findViewById(R.id.motivation);
         Random rd = new Random();
@@ -59,10 +59,10 @@ public class TestResult extends AppCompatActivity {
         setTestResults();
     }
     public void setTestResults(){
-        testName.setText(TestsMenu.testNames[TestsMenu.testID]);
+        testName.setText(TestsMenuEng.testNames[TestsMenuEng.testID]);
         for (int i = 0; i < EnglishTestsActivity.UserAnswers.length;i++){
             System.out.print("\nUser answer:" + i + " - " + EnglishTestsActivity.UserAnswers[i]);
-            if (Objects.equals(TestsMenu.correctAnswers.get(EnglishTestsActivity.usedQuestions[i]), EnglishTestsActivity.UserAnswers[i])){
+            if (Objects.equals(TestsMenuEng.correctAnswers.get(EnglishTestsActivity.usedQuestions[i]), EnglishTestsActivity.UserAnswers[i])){
                 scoreInt++;
                 res[i].setTextColor(Color.GREEN);
                 res[i].setText("O");
@@ -71,14 +71,14 @@ public class TestResult extends AppCompatActivity {
                 res[i].setText("X");
             }
         }
-        int perf = scoreInt*10;
-        performance.setText("Performance: "+perf+"%");
+        int perf = scoreInt * 10;
+        performance.setText("Úspešnosť: "+ perf +"%");
 
-        if (scoreInt==10){
-            score.setText("Score:  "+scoreInt+"/10 +5 Bonus" );
+        if (scoreInt == 10){
+            score.setText("Skóre:  "+ scoreInt +"/10 +5 Bonus" );
             scoreInt+=5;
         }else{
-            score.setText("Score:  "+scoreInt+"/10" );
+            score.setText("Skóre:  "+ scoreInt +"/10" );
         }
     }
 

@@ -22,7 +22,7 @@
         android:layout_marginBottom="11dp"
         android:backgroundTint="#FFAA00"
         android:onClick="back"
-        android:text="BACK"
+        android:text="Späť"
         android:textColor="#1D1E23"
         android:textSize="24sp" />
 
@@ -47,10 +47,17 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
-                android:backgroundTint="#000000"
-                android:onClick="startTest0Rom"
-                android:text="Frázy"
-                android:textSize="25sp" />
+                android:height="60dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableLeft="@drawable/frazy"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:onClick="startTestRom"
+                android:padding="20dp"
+                android:text="Test 0"
+                android:textColor="#1D1E23"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/test1rom"
@@ -59,10 +66,17 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
-                android:backgroundTint="#000000"
-                android:onClick="startTest0Rom"
-                android:text="Zámená"
-                android:textSize="25sp" />
+                android:height="60dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableLeft="@drawable/zamena"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:onClick="startTestRom"
+                android:padding="20dp"
+                android:text="Test 1"
+                android:textColor="#1D1E23"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/test2rom"
@@ -71,10 +85,17 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
-                android:backgroundTint="#000000"
-                android:onClick="startTest0Rom"
-                android:text="Číslovky"
-                android:textSize="25sp" />
+                android:height="60dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableLeft="@drawable/cislovky"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:onClick="startTestRom"
+                android:padding="20dp"
+                android:text="Test 2"
+                android:textColor="#1D1E23"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/test3rom"
@@ -83,10 +104,17 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
-                android:backgroundTint="#000000"
-                android:onClick="startTest0Rom"
-                android:text="Prídavné mená"
-                android:textSize="25sp" />
+                android:height="60dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableLeft="@drawable/pridavnemena"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:onClick="startTestRom"
+                android:padding="20dp"
+                android:text="Test 3"
+                android:textColor="#1D1E23"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/test4rom"
@@ -95,10 +123,17 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
-                android:backgroundTint="#000000"
-                android:onClick="startTest0Rom"
-                android:text="Rodina"
-                android:textSize="25sp" />
+                android:height="60dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableLeft="@drawable/rodina"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:onClick="startTestRom"
+                android:padding="20dp"
+                android:text="Test 4"
+                android:textColor="#1D1E23"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/test5rom"
@@ -107,10 +142,17 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
-                android:backgroundTint="#000000"
-                android:onClick="startTest0Rom"
-                android:text="Jedlo"
-                android:textSize="25sp" />
+                android:height="60dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableLeft="@drawable/jedlo"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:onClick="startTestRom"
+                android:padding="20dp"
+                android:text="Test 5"
+                android:textColor="#1D1E23"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/test6rom"
@@ -119,10 +161,17 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
-                android:backgroundTint="#000000"
-                android:onClick="startTest0Rom"
-                android:text="Časti tela"
-                android:textSize="25sp" />
+                android:height="60dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableLeft="@drawable/castitela"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:onClick="startTestRom"
+                android:padding="20dp"
+                android:text="Test 6"
+                android:textColor="#1D1E23"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/test7rom"
@@ -131,10 +180,17 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
-                android:backgroundTint="#000000"
-                android:onClick="startTest0Rom"
-                android:text="Zvieratá"
-                android:textSize="25sp" />
+                android:height="60dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableLeft="@drawable/zvierata"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:onClick="startTestRom"
+                android:padding="20dp"
+                android:text="Test 7"
+                android:textColor="#1D1E23"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/test8rom"
@@ -143,10 +199,17 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
-                android:backgroundTint="#000000"
-                android:onClick="startTest0Rom"
-                android:text="Povolania"
-                android:textSize="25sp" />
+                android:height="60dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableLeft="@drawable/povolania"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:onClick="startTestRom"
+                android:padding="20dp"
+                android:text="Test 8"
+                android:textColor="#1D1E23"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/test9rom"
@@ -155,10 +218,17 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
-                android:backgroundTint="#000000"
-                android:onClick="startTest0Rom"
-                android:text="Domov"
-                android:textSize="25sp" />
+                android:height="60dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableLeft="@drawable/domov"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:onClick="startTestRom"
+                android:padding="20dp"
+                android:text="Test 9"
+                android:textColor="#1D1E23"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/test10rom"
@@ -167,10 +237,17 @@
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="100dp"
-                android:backgroundTint="#000000"
-                android:onClick="startTest0Rom"
-                android:text="Zdravie"
-                android:textSize="25sp" />
+                android:height="60dp"
+                android:backgroundTint="#FFFFFF"
+                android:drawableLeft="@drawable/zdravie"
+                android:drawablePadding="6dp"
+                android:gravity="center"
+                android:onClick="startTestRom"
+                android:padding="20dp"
+                android:text="Test 10"
+                android:textColor="#1D1E23"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
     </ScrollView>

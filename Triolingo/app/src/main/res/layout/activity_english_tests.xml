@@ -77,7 +77,7 @@
         android:layout_marginBottom="16dp"
         android:backgroundTint="#FFAA00"
         android:onClick="onNext"
-        android:text="NEXT"
+        android:text="ĎALEJ"
         android:textColor="#1D1E23"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -121,19 +121,19 @@
         app:layout_constraintStart_toStartOf="@+id/imageView7" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/questionNuber"
         android:layout_width="219dp"
         android:layout_height="94dp"
         android:gravity="center"
-        android:text="CHOOSE THE RIGHT ANSWER..."
+        android:text="OTÁZKA Č. "
         android:textColor="#1D1E23"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.817"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.475" />
+        app:layout_constraintVertical_bias="0.47" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

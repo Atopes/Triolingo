@@ -19,8 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class Ladder extends AppCompatActivity {
-    private String[] names=new String[10];
-    private int[] scores=new int[10];
+    private String[] names = new String[10];
+    private int[] scores = new int[10];
     private DatabaseReference databaseReferenceRanking;
     private boolean inLadder=false;
     private TextView level1,level2,level3,level4,level5,level6,level7,level8,level9,level10;
@@ -36,30 +36,30 @@ public class Ladder extends AppCompatActivity {
 
         userLevel=(TextView) findViewById(R.id.LyourLevel);
         userScore=(TextView) findViewById(R.id.LyourScore);
-        userLevel.setText("Your level: "+((ProfileActivity.score/100)+1));
-        userScore.setText("Your score: "+(ProfileActivity.score));
+        userLevel.setText("Level: "+((ProfileActivity.score/100)+1));
+        userScore.setText("Skóre: "+(ProfileActivity.score));
 
-        level1 =(TextView) findViewById(R.id.ladderLevel);
-        level2 =(TextView) findViewById(R.id.ladderLevel2);
-        level3 =(TextView) findViewById(R.id.ladderLevel3);
-        level4 =(TextView) findViewById(R.id.ladderLevel4);
-        level5 =(TextView) findViewById(R.id.ladderLevel5);
-        level6 =(TextView) findViewById(R.id.ladderLevel6);
-        level7 =(TextView) findViewById(R.id.ladderLevel7);
-        level8 =(TextView) findViewById(R.id.ladderLevel8);
-        level9 =(TextView) findViewById(R.id.ladderLevel9);
-        level10 =(TextView) findViewById(R.id.ladderLevel10);
+        level1 = (TextView) findViewById(R.id.ladderLevel);
+        level2 = (TextView) findViewById(R.id.ladderLevel2);
+        level3 = (TextView) findViewById(R.id.ladderLevel3);
+        level4 = (TextView) findViewById(R.id.ladderLevel4);
+        level5 = (TextView) findViewById(R.id.ladderLevel5);
+        level6 = (TextView) findViewById(R.id.ladderLevel6);
+        level7 = (TextView) findViewById(R.id.ladderLevel7);
+        level8 = (TextView) findViewById(R.id.ladderLevel8);
+        level9 = (TextView) findViewById(R.id.ladderLevel9);
+        level10 = (TextView) findViewById(R.id.ladderLevel10);
 
-        name1 =(TextView) findViewById(R.id.ladderName);
-        name2 =(TextView) findViewById(R.id.ladderName2);
-        name3 =(TextView) findViewById(R.id.ladderName3);
-        name4 =(TextView) findViewById(R.id.ladderName4);
-        name5 =(TextView) findViewById(R.id.ladderName5);
-        name6 =(TextView) findViewById(R.id.ladderName6);
-        name7 =(TextView) findViewById(R.id.ladderName7);
-        name8 =(TextView) findViewById(R.id.ladderName8);
-        name9 =(TextView) findViewById(R.id.ladderName9);
-        name10 =(TextView) findViewById(R.id.ladderName10);
+        name1 = (TextView) findViewById(R.id.ladderName);
+        name2 = (TextView) findViewById(R.id.ladderName2);
+        name3 = (TextView) findViewById(R.id.ladderName3);
+        name4 = (TextView) findViewById(R.id.ladderName4);
+        name5 = (TextView) findViewById(R.id.ladderName5);
+        name6 = (TextView) findViewById(R.id.ladderName6);
+        name7 = (TextView) findViewById(R.id.ladderName7);
+        name8 = (TextView) findViewById(R.id.ladderName8);
+        name9 = (TextView) findViewById(R.id.ladderName9);
+        name10 = (TextView) findViewById(R.id.ladderName10);
 
         score1 =(TextView) findViewById(R.id.ladderScore);
         score2 =(TextView) findViewById(R.id.ladderScore2);
@@ -138,18 +138,18 @@ public class Ladder extends AppCompatActivity {
                     names[rank-1] = userProfile.name;
                     if (ProfileActivity.fullName.equals(names[rank-1])) {
                         inLadder = true;
-                        scores[rank-1]=ProfileActivity.score;
+                        scores[rank-1] = ProfileActivity.score;
                     }
                 }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Ladder.this, "Something went wrong!", Toast.LENGTH_LONG).show();
+                Toast.makeText(Ladder.this, "Nastala chyba!", Toast.LENGTH_LONG).show();
             }
         });
     }
     public void sortArrays(int[] scores,String[] names){
-        int small= -1;   //at start there is no small  number....
+        int small = -1;   //at start there is no small  number....
         for (int i = 0; i <scores.length; i++)
         {
             small = i;

@@ -45,12 +45,12 @@ public class ForgotPassword extends AppCompatActivity {
         String email = emailEditText.getText().toString().trim();
 
         if (email.isEmpty()){
-            emailEditText.setError("Email is required!");
+            emailEditText.setError("E-mail je povinné pole!");
             emailEditText.requestFocus();
             return;
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            emailEditText.setError("Please provide valid email!");
+            emailEditText.setError("Prosím zadajte platný e-mail!");
             emailEditText.requestFocus();
             return;
         }
@@ -62,11 +62,11 @@ public class ForgotPassword extends AppCompatActivity {
 
                 if (task.isSuccessful()){
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(ForgotPassword.this,"Check your email to reset your password!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(ForgotPassword.this,"Pozrite si Váš mail na zmenu hesla!",Toast.LENGTH_LONG).show();
                 }
                 else {
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(ForgotPassword.this,"Something went wrong! Try again!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(ForgotPassword.this,"Nastala chyba! Skúste to znova!",Toast.LENGTH_LONG).show();
                 }
             }
         });
