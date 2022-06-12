@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
         <activity
-            android:name=".TestMenuSpecial"
+            android:name=".TestsMenuSpecial"
             android:exported="false" />
         <activity
             android:name=".Ladder"
@@ -32,7 +32,7 @@
             android:name=".TestsMenuRom"
             android:exported="false" />
         <activity
-            android:name=".EnglishTestsActivity"
+            android:name=".TestsActivity"
             android:exported="false" />
         <activity
             android:name=".ForgotPassword"

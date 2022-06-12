@@ -78,7 +78,7 @@ public class TestsMenuRom extends AppCompatActivity {
         }
         if (ProfileActivity.score >= scoreToNextTest * id){
             loadTest(id);
-            startActivity(new Intent(TestsMenuRom.this, EnglishTestsActivity.class));
+            startActivity(new Intent(TestsMenuRom.this, TestsActivity.class));
         }else{
             Toast.makeText(getApplicationContext(), "Na odomknutie tohto testu potrebujete aspoň " + scoreToNextTest * id +" skóre.", Toast.LENGTH_SHORT).show();
         }

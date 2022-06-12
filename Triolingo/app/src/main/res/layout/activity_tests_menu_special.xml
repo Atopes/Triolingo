@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/splash_screen_1"
-    tools:context=".TestsMenuRom">
+    tools:context=".TestsMenuSpecial">
 
     <Button
         android:id="@+id/back"
@@ -169,44 +169,6 @@
                 android:onClick="startTestSpecial"
                 android:padding="20dp"
                 android:text="TEST 6"
-                android:textColor="#1D1E23"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/test7special"
-                android:layout_width="259dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginRight="100dp"
-                android:height="60dp"
-                android:backgroundTint="#FFFFFF"
-                android:drawablePadding="6dp"
-                android:gravity="center"
-                android:drawableLeft="@drawable/special"
-                android:onClick="startTestSpecial"
-                android:padding="20dp"
-                android:text="TEST 7"
-                android:textColor="#1D1E23"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/test8special"
-                android:layout_width="259dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginRight="100dp"
-                android:height="60dp"
-                android:backgroundTint="#FFFFFF"
-                android:drawablePadding="6dp"
-                android:gravity="center"
-                android:drawableLeft="@drawable/special"
-                android:onClick="startTestSpecial"
-                android:padding="20dp"
-                android:text="TEST 8"
                 android:textColor="#1D1E23"
                 android:textSize="20sp"
                 android:textStyle="bold" />

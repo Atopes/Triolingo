@@ -17,7 +17,7 @@ import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class EnglishTestsActivity extends AppCompatActivity {
+public class TestsActivity extends AppCompatActivity {
 
     private RadioButton option1, option2, option3, option4;
     private Button buttonNext;
@@ -32,7 +32,7 @@ public class EnglishTestsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_english_tests);
+        setContentView(R.layout.activity_tests);
 
         question = (TextView) findViewById(R.id.question);
         questionNumber = (TextView) findViewById(R.id.questionNuber);
@@ -97,7 +97,7 @@ public class EnglishTestsActivity extends AppCompatActivity {
     public void onNext(View view){
         if (!resultShown) {
             if (!option1.isChecked() && !option2.isChecked() && !option3.isChecked() && !option4.isChecked()) {
-                    Toast.makeText(EnglishTestsActivity.this,"Nevybrali ste žiadnu z možností!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(TestsActivity.this,"Nevybrali ste žiadnu z možností!",Toast.LENGTH_LONG).show();
                 return;
             }
             if (UserAnswers[activeQuestion].equals(TestsMenuEng.correctAnswers.get(usedQuestions[activeQuestion]))){

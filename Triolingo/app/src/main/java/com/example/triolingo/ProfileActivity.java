@@ -147,7 +147,7 @@ public class ProfileActivity extends AppCompatActivity {
         startActivity(new Intent(ProfileActivity.this, TestsMenuRom.class));
     }
     public void specialTestMenu(View view){
-        startActivity(new Intent(ProfileActivity.this, TestsMenuEng.class));
+        startActivity(new Intent(ProfileActivity.this, TestsMenuSpecial.class));
     }
     public void Ranking(View view) {
         startActivity(new Intent(ProfileActivity.this, Ladder.class));

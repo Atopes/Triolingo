@@ -60,9 +60,9 @@ public class TestResult extends AppCompatActivity {
     }
     public void setTestResults(){
         testName.setText(TestsMenuEng.testNames[TestsMenuEng.testID]);
-        for (int i = 0; i < EnglishTestsActivity.UserAnswers.length;i++){
-            System.out.print("\nUser answer:" + i + " - " + EnglishTestsActivity.UserAnswers[i]);
-            if (Objects.equals(TestsMenuEng.correctAnswers.get(EnglishTestsActivity.usedQuestions[i]), EnglishTestsActivity.UserAnswers[i])){
+        for (int i = 0; i < TestsActivity.UserAnswers.length; i++){
+            System.out.print("\nUser answer:" + i + " - " + TestsActivity.UserAnswers[i]);
+            if (Objects.equals(TestsMenuEng.correctAnswers.get(TestsActivity.usedQuestions[i]), TestsActivity.UserAnswers[i])){
                 scoreInt++;
                 res[i].setTextColor(Color.GREEN);
                 res[i].setText("O");
