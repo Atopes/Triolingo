@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
         <activity
+            android:name=".TestMenuSpecial"
+            android:exported="false" />
+        <activity
             android:name=".Ladder"
             android:exported="false" />
         <activity
