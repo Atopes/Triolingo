@@ -5,23 +5,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.service.notification.NotificationListenerService;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.*;
+
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Ladder extends AppCompatActivity {
     private String[] names = new String[10];
-    private int[] scores = new int[10];
-    private DatabaseReference databaseReferenceRanking;
+    private long[] scores = new long[10];
+
+    private FirebaseFirestore databaseReferenceRanking;
     private boolean inLadder=false;
     private TextView level1,level2,level3,level4,level5,level6,level7,level8,level9,level10;
     private TextView name1,name2,name3,name4,name5,name6,name7,name8,name9,name10;
@@ -32,7 +33,7 @@ public class Ladder extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ladder);
 
-        databaseReferenceRanking = FirebaseDatabase.getInstance().getReference("Ranking");
+        databaseReferenceRanking = FirebaseFirestore.getInstance();
 
         userLevel=(TextView) findViewById(R.id.LyourLevel);
         userScore=(TextView) findViewById(R.id.LyourScore);
@@ -72,10 +73,9 @@ public class Ladder extends AppCompatActivity {
         score9 =(TextView) findViewById(R.id.ladderScore9);
         score10 =(TextView) findViewById(R.id.ladderScore10);
 
-        for (int i = 0; i < scores.length; i++) {
-            getData(i+1);
-        }
-
+        getData();
+    }
+    public void allTheStuff(){
         if (!inLadder) {
             if (ProfileActivity.score > scores[9]) {
                 scores[9]=ProfileActivity.score;
@@ -86,12 +86,10 @@ public class Ladder extends AppCompatActivity {
         sortArrays(scores,names);
         showData();
 
-        for (int i = 0; i < scores.length; i++) {
-            int rank = 1;
-            String firstChild = "Rank" + rank;
-            databaseReferenceRanking.child(firstChild).child("Score").setValue(scores[i]);
-            databaseReferenceRanking.child(firstChild).child("Name").setValue(names[i]);
+        for (int i = 0; i < 10; i++) {
+            saveData(i);
         }
+
     }
     public void showData(){
         level1.setText(String.valueOf(1+scores[9]/100));
@@ -127,41 +125,66 @@ public class Ladder extends AppCompatActivity {
         score9.setText(String.valueOf(scores[1]));
         score10.setText(String.valueOf(scores[0]));
     }
-    public void getData(int rank){
-        String firstChild = "Rank" + rank;
-        databaseReferenceRanking.child(firstChild).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Ranking userProfile = snapshot.getValue(Ranking.class);
-                if (userProfile != null) {
-                    scores[rank-1] = userProfile.score;
-                    names[rank-1] = userProfile.name;
-                    if (ProfileActivity.fullName.equals(names[rank-1])) {
-                        inLadder = true;
-                        scores[rank-1] = ProfileActivity.score;
+
+    public void saveData(int rank){
+        Map<String, Object> user = new HashMap<>();
+        user.put("Name", names[9-rank]);
+        user.put("Score", scores[9-rank]);
+        String documentPath ="Rank"+(rank+1) ;
+        databaseReferenceRanking.collection("Ranking").document(documentPath)
+                .set(user)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        System.out.println("Pridane");
                     }
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Ladder.this, "Nastala chyba!", Toast.LENGTH_LONG).show();
-            }
-        });
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        System.out.println("Nepridane");
+                    }
+                });
     }
-    public void sortArrays(int[] scores,String[] names){
-        int small = -1;   //at start there is no small  number....
-        for (int i = 0; i <scores.length; i++)
-        {
+    public void getData(){
+
+        databaseReferenceRanking.collection("Ranking")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            int rank= 0;
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                scores[rank] = (Long) document.getData().get("Score");
+                                names[rank] = (String) document.getData().get("Name");
+                                if (ProfileActivity.fullName.equals(names[rank])){
+                                    inLadder=true;
+                                    scores[rank]= ProfileActivity.score;
+                                }
+                                rank++;
+                                if (rank==9){
+                                    allTheStuff();
+                                    break;
+                                }
+                            }
+                        } else {
+                            System.out.println("Didnt get data");
+                        }
+                    }
+                });
+    }
+
+    public void sortArrays(long[] scores,String[] names){
+        int small = -1;
+        for (int i = 0; i <scores.length; i++) {
             small = i;
-            for (int j = i ; j <= scores.length-1; j++)
-            {
-                if (scores[j] < scores[small])
-                {
+            for (int j = i ; j <= scores.length-1; j++) {
+                if (scores[j] < scores[small]) {
                     small = j;
                 }
-                //swap values
             }
-            int tempScore = scores[i];
+            long tempScore = scores[i];
             String tempName =names[i];
             scores[i] = scores[small];
             names[i]= names[small];
